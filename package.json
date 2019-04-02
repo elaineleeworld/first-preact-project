@@ -1,0 +1,54 @@
+{
+  "name": "preact-splash-page-boilerplate",
+  "version": "1.0.0",
+  "description": "This is a simple template using Webpack to bundle.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack.config.js --mode=development",
+    "build": "webpack --config webpack.config.js --mode=production",
+    "start:dist": "http-server dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicohsieh/preact-splash-page-boilerplate.git"
+  },
+  "author": "Nico Hsieh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicohsieh/preact-splash-page-boilerplate/issues"
+  },
+  "homepage": "https://github.com/nicohsieh/preact-splash-page-boilerplate#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.47",
+    "@babel/plugin-transform-react-jsx": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.3.4",
+    "autoprefixer": "^8.5.0",
+    "babel-loader": "^8.0.0-beta.3",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.0.0-beta.47",
+    "classnames": "^2.2.6",
+    "preact": "^8.2.9"
+  }
+}
