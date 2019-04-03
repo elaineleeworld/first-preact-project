@@ -89,6 +89,8 @@ class Slideshow extends Component {
     if (this.state.isLoading) {
       fetch(this.props.content)
         .then(response => response.json())
+        // .then(res => res.text())          // convert to plain text
+       // .then(text => console.log(text))  // then log it out
         .then((data) => {
           this.setState({
             isLoading: false,

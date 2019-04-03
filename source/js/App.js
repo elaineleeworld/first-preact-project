@@ -2,6 +2,8 @@ import { h, render, Component } from 'preact'
 
 import CTA from './components/CTA'
 import Slideshow from './components/Slideshow'
+// import introJSON from 'Slides'
+
 
 class App extends Component {
 	render(props, states) {
@@ -19,6 +21,7 @@ class App extends Component {
 				 <CTA word='SCROLL THE FACTS'/>
 				 </div>
 				 </div>
+				{/*<Slideshow content={introJSON} cycleSpeed={3000} />*/}
 				<Slideshow content={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/4723/slides.json`} cycleSpeed={3000} />
 			</div>
 			
