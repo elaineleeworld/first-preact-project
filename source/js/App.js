@@ -8,14 +8,14 @@ class App extends Component {
 	render(props, states) {
 		return (
 			<div id='app'>
-			<div>
+			<div class='alignment'>
 				<Slideshow content={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/4723/slides.json`} cycleSpeed={3000} />
 			</div>
 			<br/>
-			<br/>
-			<div>
+			{/*<br/>
+			<div class='alignment'>
 				<Slideshow content={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/4723/slides.json`} cycleSpeed={3000} />
-			</div>
+			</div>*/}
 			</div>
 		)
 	}
