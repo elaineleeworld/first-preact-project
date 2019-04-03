@@ -1,3 +1,4 @@
+
 # Preact Splash Page Boilerplate
 
 🕊️ This is a simple light weight boilerplate with Preact and powered by Webpack. It aims for static splash pages or social bounce pages that need to be very light and don't require complexity like routes or global states.
@@ -63,3 +64,5 @@ npm run start:dist
 ### License
 
 MIT
+
+
