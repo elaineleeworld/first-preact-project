@@ -2,6 +2,7 @@
 import { h, render, Component } from 'preact'
 import classNames from 'classNames'
 
+
 //create a JSON file with id, headline, subheadline, url for image, 
 //create a CarouselWrapper component - wrapper for entire layout and logic
 //create an ImageSlide component - current, image shown
@@ -18,9 +19,12 @@ const Slide = ({ content, current }) => {
   const classes = classnames({'slide': true,'active': current});
   console.log('CLASSES', classes)
   return (
-    <div className= {classes} >
 
-      <img
+    <div className= {classes} >
+   {/* <div id='red-logo-container'>
+      <img className='red-logo' src='assets/images/REDproduction.png'/>
+      </div>*/}
+      <img className='slide-image'
         src={content.url}
         title={content.title}
       />
@@ -108,6 +112,7 @@ class Slideshow extends Component {
   render (props, { error, isLoading, slides }) {
     const generateSlides = (
       slides.map((slide, i) => (
+       
           <Slide
             className={this.props.classes}
             content={slide}
