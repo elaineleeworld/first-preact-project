@@ -35,7 +35,7 @@ class App extends Component {
 				
 			<div className='section'>
 
-				<CopyText headline="0.5 seconds is the average time spend on a social ad. <br/> We've got that beat." subheadline="Our mission: stop the scroll. Whether they're planned weeks in advance or bult on the fly, our social ads stand out in a feed."/>
+				<CopyText headline="0.5 seconds is the average time spend on a social ad. We've got that beat." subheadline="Our mission: stop the scroll. Whether they're planned weeks in advance or bult on the fly, our social ads stand out in a feed."/>
 				
 				<Slideshow content={data3} cycleSpeed={3000} />
 			</div>
