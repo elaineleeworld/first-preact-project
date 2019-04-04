@@ -2,6 +2,7 @@ import { h, render, Component } from 'preact'
 
 import CTA from './components/CTA'
 import Slideshow from './components/Slideshow'
+import CopyText from './components/CopyText'
 // import introJSON from './api/SlideData'
 // import introJSON from '../SlideData.json'
 // import * as introJSON from '../../SlideData.json'
@@ -21,7 +22,7 @@ class App extends Component {
 		return (
 			<div id='app'>
 			<div className='section'>
-				<div className='copy-text-container'>
+				{/*<div className='copy-text-container'>
 				 <img className='red-logo' src='assets/images/REDproduction.png'/>
 				 <div className='copy-text'>
 				 <h1>Ads with impact.</h1>
@@ -31,23 +32,16 @@ class App extends Component {
 				 <br/>
 				 <CTA word='SCROLL THE FACTS'/>
 				 </div>
-				 </div>
-				{/*<Slideshow content={`http://localhost:8000/SlideData.json`} cycleSpeed={3000} />*/}
+				 </div>*/}
+				
 				<Slideshow content={data} cycleSpeed={3000} />
 			</div>
 			
 			<div className='section'>
-				{/*<div className='copy-text-container'>
-				 <img className='red-logo' src='assets/images/REDproduction.png'/>
-				 <div className='copy-text'>
-				 <h1>20 years at the forefront of digital advertising</h1>
-				 <br/>
-				 <p>In 1999, while people were still using dial-up to surf the Net, we were owing the banner game.</p>
-				 </div>
-				 </div>*/}
+				<CopyText />
 				<Slideshow content={data2} cycleSpeed={3000} />
 			</div>
-
+				<CopyText />
 			<div className='section'>
 				<Slideshow content={data3} cycleSpeed={3000} />
 			</div>
