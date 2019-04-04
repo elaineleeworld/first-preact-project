@@ -1,0 +1,13 @@
+{
+	"slides":[
+	  {"id":"0","title":"Test 01","url":"assets/images/intro_1_marvel.png"},
+	  {"id":"1","title":"Test 02","url":"assets/images/intro_2_UA.png"},
+	  {"id":"2","title":"Test 03","url":"assets/images/intro_3_vans.png"},
+	  {"id":"3","title":"Test 04","url":"assets/images/intro_4_hulu.png"},
+	  {"id":"4","title":"Test 05","url":"assets/images/intro_5_riot.png"},
+	  {"id":"5","title":"Test 05","url":"assets/images/intro_6_disney.png"},
+	  {"id":"6","title":"Test 05","url":"assets/images/intro_7_espn.png"}
+	 
+	]
+}
+

@@ -48,7 +48,19 @@ const config = {
                         outputPath: 'fonts/'
                     }
                 }]
-            }
+            },
+            {
+		        type: 'javascript/auto',
+		        test: /\.json$/,
+		        use: [
+		            {
+		              loader: 'file-loader',
+		              options: {
+		                  name: "./plugin-config/[name].[ext]"
+		              }
+		            }
+		        ]
+		      }
 		],
 	},
 	resolve: {

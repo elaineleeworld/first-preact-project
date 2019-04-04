@@ -87,7 +87,13 @@ class Slideshow extends Component {
 
   componentDidMount () {
     if (this.state.isLoading) {
-      fetch(this.props.content)
+      fetch(this.props.content, {
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    })
         .then(response => response.json())
         // .then(res => res.text())          // convert to plain text
        // .then(text => console.log(text))  // then log it out

@@ -2,7 +2,10 @@ import { h, render, Component } from 'preact'
 
 import CTA from './components/CTA'
 import Slideshow from './components/Slideshow'
-// import introJSON from 'Slides'
+// import introJSON from './api/SlideData'
+// import introJSON from '../SlideData.json'
+// import * as introJSON from '../../SlideData.json'
+var data = require('./data/SlideData.json')
 
 
 class App extends Component {
@@ -21,8 +24,8 @@ class App extends Component {
 				 <CTA word='SCROLL THE FACTS'/>
 				 </div>
 				 </div>
-				{/*<Slideshow content={introJSON} cycleSpeed={3000} />*/}
-				<Slideshow content={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/4723/slides.json`} cycleSpeed={3000} />
+				{/*<Slideshow content={`http://localhost:8000/SlideData.json`} cycleSpeed={3000} />*/}
+				<Slideshow content={data} cycleSpeed={3000} />
 			</div>
 			
 			<div className='section'>
