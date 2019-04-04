@@ -12,10 +12,11 @@ class CopyText extends Component {
 		return (
 			<div className='copy-text-container'>
 				 <img className='red-logo' src='assets/images/REDproduction.png'/>
-				
-				 {this.props.children}
-				
-				
+				<div className='copy-text'>
+				 <h1>{this.props.headline}</h1>
+				<br/>
+				<p>{this.props.subheadline}</p>
+				 </div>
 				 </div>
 		)
 	}
