@@ -134,8 +134,8 @@ class Slideshow extends Component {
     const displaySlides = (
       <div
         class="slideshow__container"
-        onMouseEnter={this.stopRotation}
-        onMouseLeave={this.startRotation}
+        //onMouseEnter={this.stopRotation}
+        //onMouseLeave={this.startRotation}
       >
         {generateSlides}
       </div>
