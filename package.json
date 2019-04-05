@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/nicohsieh/preact-splash-page-boilerplate/issues"
   },
-  "homepage": "https://github.com/nicohsieh/preact-splash-page-boilerplate#readme",
+  "homepage": "https://github.com/elaineleeworld/first-preact-project",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.0.0-beta.47",

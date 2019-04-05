@@ -6,6 +6,8 @@ import CopyText from './components/CopyText'
 // import introJSON from './api/SlideData'
 // import introJSON from '../SlideData.json'
 // import * as introJSON from '../../SlideData.json'
+
+// import Marvel from '../assets/images/netflix-marvel-text.png'
 var data = require('./data/Hero.json')
 var data2 = require('./data/Section_1.json')
 var data3 = require('./data/Section_2.json')
@@ -18,6 +20,10 @@ var data9 = require('./data/TheLastSection.json')
 
 
 class App extends Component {
+	constructor(props){
+		super(props);
+		
+	}
 	render(props, states) {
 		return (
 			<div id='app'>
@@ -25,6 +31,7 @@ class App extends Component {
 				<CopyText headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
 				
 				<Slideshow content={data} cycleSpeed={3000} />
+				{/*<img src={Marvel} />*/}
 			</div>
 			
 			<div className='section'>

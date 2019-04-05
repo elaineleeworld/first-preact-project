@@ -54,6 +54,9 @@ class Slideshow extends Component {
       time: null
     })
   };
+  // scrolIntoView = () => {
+    
+  // }
 
   next = () => {
     const current = this.state.current
