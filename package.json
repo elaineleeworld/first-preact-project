@@ -9,7 +9,7 @@
     "build": "webpack --config webpack.config.js --mode=production",
     "start:dist": "http-server dist",
     "start": "preact-scripts start",
-   "predeploy": "yarn run build",
+   "predeploy": "npm run build",
    "deploy": "gh-pages -d build",
    "build": "preact-scripts build",
    "test": "preact-scripts test",
