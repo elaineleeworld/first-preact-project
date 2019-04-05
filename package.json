@@ -8,12 +8,8 @@
     "start": "webpack-dev-server --config webpack.config.js --mode=development",
     "build": "webpack --config webpack.config.js --mode=production",
     "start:dist": "http-server dist",
-    "start": "preact-scripts start",
    "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
-   "build": "preact-scripts build",
-   "test": "preact-scripts test",
-   "eject": "react-scripts eject"
+   "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
