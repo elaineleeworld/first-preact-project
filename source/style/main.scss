@@ -53,6 +53,7 @@ h1{
   font-family: SharpGroteskMedium25;
   font-size: 60px;
   color: white;
+  margin: 0;
 }
 p {
   margin: 1rem 0 0;
@@ -102,7 +103,7 @@ a {
   width: 50vw;
     top: 50%;
     /* left: 50%; */
-    transform: translate(2%, -50%);
+    transform: translate(0%, -46%);
 }
 
 /* Slideshow styling ----- */
@@ -171,6 +172,9 @@ a {
   .slideshow__container{
     min-width: 700px;
     /*width: 100vw;*/
+  }
+  .copy-text-container{
+    width: 60vw;
   }
 }
 

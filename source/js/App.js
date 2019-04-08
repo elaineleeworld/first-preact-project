@@ -33,6 +33,82 @@ class App extends Component {
 		// this.onScroll = this.onScroll.bind(this);
 		// this.scrollToTop = this.scrollToTop.bind(this);
 		this.section1ref = createRef();
+		this.section2ref = createRef();
+		this.section3ref = createRef();
+		this.section4ref = createRef();
+		this.section5ref = createRef();
+		this.section6ref = createRef();
+		this.section7ref = createRef();
+		this.clickToSection1 = this.clickToSection1.bind(this);
+		this.clickToSection2 = this.clickToSection2.bind(this);
+		this.clickToSection3 = this.clickToSection3.bind(this);
+		this.clickToSection4 = this.clickToSection4.bind(this);
+		this.clickToSection5 = this.clickToSection5.bind(this);
+		this.clickToSection6 = this.clickToSection6.bind(this);
+		this.clickToSection7 = this.clickToSection7.bind(this);
+	}
+	clickToSection1 = () => {
+		console.log('CLICKED 1!')
+		if(this.section1ref.current){
+            this.section1ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
+	};
+	clickToSection2 = () => {
+		console.log('CLICKED 2!')
+		if(this.section2ref.current){
+            this.section2ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
+	};
+	clickToSection3 = () => {
+		console.log('CLICKED 3!')
+		if(this.section3ref.current){
+            this.section3ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
+	};
+	clickToSection4 = () => {
+		console.log('CLICKED 4!')
+		if(this.section4ref.current){
+            this.section4ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
+	};
+	clickToSection5 = () => {
+		console.log('CLICKED 5!')
+		if(this.section5ref.current){
+            this.section5ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
+	};
+	clickToSection6 = () => {
+		console.log('CLICKED 6!')
+		if(this.section6ref.current){
+            this.section6ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
+	};
+	clickToSection7 = () => {
+		console.log('CLICKED 7!')
+		if(this.section7ref.current){
+            this.section7ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
 	}
 	 // scrollDetect = () => {
 	  
@@ -160,7 +236,23 @@ class App extends Component {
 		return (
 			<div id='app'>
 			 <img className='red-logo' src='assets/images/REDproduction.png'/>
-			<Sidebar />
+			<div className="sidebar-container">
+				<div id='hamburger'>
+					 <img className='hamburger-icon' src='assets/images/hamburger.png'/>
+				</div>
+				<div className='circles'>
+					<img className='circle-1' src='assets/images/circle1.png' onClick={this.clickToSection1}/>
+					<img className='circle-2' src='assets/images/circle2.png' onClick={this.clickToSection2}/>
+					<img className='circle-3' src='assets/images/circle3.png' onClick={this.clickToSection3}/>
+					<img className='circle-4' src='assets/images/circle4.png' onClick={this.clickToSection4}/>
+					<img className='circle-5' src='assets/images/circle5.png' onClick={this.clickToSection5}/>
+					<img className='circle-6' src='assets/images/circle6.png' onClick={this.clickToSection6}/>
+					<img className='circle-7' src='assets/images/circle7.png' onClick={this.clickToSection7}/>
+				</div>
+				<div id='mouse'>
+					 <img className='mouse-icon' src='assets/images/mouse.png'/>
+				</div>
+			</div>
 			
 			<div id='hero' >
 				<CopyText  headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
@@ -175,33 +267,33 @@ class App extends Component {
 				<Slideshow content={data2} cycleSpeed={3000} />
 			</div>
 				
-			<div className='section-2' >
+			<div className='section-2' ref={this.section2ref} >
 
 				<CopyText headline="0.5 seconds is the average time spend on a social ad. We've got that beat." subheadline="Our mission: stop the scroll. Whether they're planned weeks in advance or bult on the fly, our social ads stand out in a feed."/>
 				
 				<Slideshow content={data3} cycleSpeed={3000} />
 			</div>
-			<div className='section-3' >
+			<div className='section-3' ref={this.section3ref}>
 			 	<CopyText headline="13x. That's how much faster we work." subheadline="We've developed in-house ad tech that creates dynamic campaigns, at scale, and much faster than conventional production methods. Including a product called Velvet - our favorite toy."/>
 				
 				<Slideshow content={data4} cycleSpeed={3000} />
 			</div>
-			<div className='section-4'>
+			<div className='section-4' ref={this.section4ref}>
 			 	<CopyText headline="100% of our code is open-source, self-compiling, and compatible with all networks." subheadline="So it just, you know... works." />
 				 
 				<Slideshow content={data5} cycleSpeed={3000} />
 			</div>
-			<div className='section-5'>
+			<div className='section-5' ref={this.section5ref}>
 			 	<CopyText headline="6 partners consult with us about how to make their platforms work better." subheadline="You may have heard of them." />
 				
 				<Slideshow content={data6} cycleSpeed={3000} />
 			</div>
-			<div className='section-6'>
-			 	<CopyText headline="100% of our in-house team knows the platforms inside and out." subheadline=">We've got project managers who know the tech like they coded it. Developers with backgrounds in design and animation.  A company-wide expertise in all things social.  We can build what you need, but we can also advise on how to get the most out of every platform." />
+			<div className='section-6' ref={this.section6ref}>
+			 	<CopyText headline="100% of our in-house team knows the platforms inside and out." subheadline="We've got project managers who know the tech like they coded it. Developers with backgrounds in design and animation.  A company-wide expertise in all things social.  We can build what you need, but we can also advise on how to get the most out of every platform." />
 				
 				<Slideshow content={data7} cycleSpeed={3000} />
 			</div>
-			<div className='section-7'>
+			<div className='section-7' ref={this.section7ref}>
 			 	<CopyText headline="Tons of happy clients use our skills every day." subheadline="They're too many to count. But they include some big names in sports, streaming entertainment, and beverage - and one kinda famous mouse."/>
 				 
 				<Slideshow content={data8} cycleSpeed={3000} />
