@@ -253,11 +253,14 @@ class App extends Component {
 		return (
 			<div id='app'>
 			 <img className='red-logo' src='assets/images/REDproduction.png'/>
-			<div className="sidebar-container">
-				<div id='hamburger' onClick={this.clickHamburger}>
+			 <div id='hamburger' onClick={this.clickHamburger}>
 					 
 					  { this.state.isOpened ? <img className='hamburger-icon' src='assets/images/hamburger.png'/> : <img className='X-icon' src='assets/images/X.png'/> }
 				</div>
+
+
+			<div className="sidebar-container">
+				
 				<div className='circles'>
 					<img className='circle-1' src='assets/images/circle1.png' onClick={this.clickToSection1}/>
 					<img className='circle-2' src='assets/images/circle2.png' onClick={this.clickToSection2}/>
@@ -272,8 +275,7 @@ class App extends Component {
 				</div>
 			</div>
 			
-			
-			{ this.state.isOpened ? null: <HamburgerOverlay/> }
+			{ this.state.isOpened ? <div className='content-container'>
 			<div id='hero' ref={this.heroRef} >
 				<CopyText  headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
 				
@@ -326,6 +328,9 @@ class App extends Component {
 				  </div>*/}
 				<Slideshow content={data9} cycleSpeed={3000} />
 			</div>
+			</div> 
+
+			: <HamburgerOverlay/> }
 			
 		</div>
 		)

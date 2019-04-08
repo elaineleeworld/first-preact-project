@@ -156,15 +156,30 @@ a {
   
   object-fit: cover;
 }
-
+#hamburger{
+  width: 80px;
+  height: 80px;
+  position:fixed;
+  top: 40px;
+  right: 3px;
+  z-index: 10;
+}
 .hamburger-overlay-container{
   background-color: #2e374b;
   width: 100vw;
   height: 100vh;
-  
+  z-index: 1000;
+
 }
-.X-icon{
-  
+.hamburger-icon, .X-icon{
+  cursor: pointer;
+  position:fixed;
+  top: 61px;
+  right: 20px;
+  z-index: 10;
+}
+.content-container {
+  z-index: 1;
 }
 
 @media only screen and (max-width: 1500px){
