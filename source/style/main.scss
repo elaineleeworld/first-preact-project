@@ -34,7 +34,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+  /*font-family: 'Lato', sans-serif;*/
   
   color: #34495e;
   background-color: black;
@@ -169,7 +169,24 @@ a {
   width: 100vw;
   height: 100vh;
   z-index: 1000;
-
+  color: white;
+  font-family: Rubik-Light;
+  font-size: 30px;
+}
+.overlay-divider-line {
+  content: '';
+    width: 2px;
+    height: 85%;
+    background-color: #b3b3b3;
+    position: fixed;
+    right: 500px;
+    top: 60px;
+    z-index: 10;
+}
+ul {
+  list-style-type: none;
+  width: 19vw;
+  line-height: 2.2;
 }
 .hamburger-icon, .X-icon{
   cursor: pointer;

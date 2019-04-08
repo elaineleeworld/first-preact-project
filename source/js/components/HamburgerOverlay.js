@@ -4,7 +4,7 @@ class HamburgerOverlay extends Component {
 	render(){
 		return(
 			<div className="hamburger-overlay-container">
-			
+				<div className='overlay-divider-line'>
 				<ul>
 					<li>Home</li>
 					<li>Latest Work</li>
@@ -12,6 +12,7 @@ class HamburgerOverlay extends Component {
 					<li>Contact Us</li>
 					<li>Careers</li>
 				</ul>
+				</div>
 			</div>
 
 
