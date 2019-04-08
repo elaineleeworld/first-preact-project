@@ -1,9 +1,9 @@
-import { h, render, Component, createRef } from 'preact'
-import React from 'react';
+import { h, render, Component, createRef, forwardRef } from 'preact'
 import CTA from './components/CTA'
 import Slideshow from './components/Slideshow'
 import Sidebar from './components/Sidebar'
 import CopyText from './components/CopyText'
+import React from 'preact-compat';
 // var scrollIntoView = require('scroll-into-view');
 // import fullpage from 'fullpage.js';
 
@@ -32,7 +32,7 @@ class App extends Component {
 		// this.mySection1 = createRef();
 		// this.onScroll = this.onScroll.bind(this);
 		// this.scrollToTop = this.scrollToTop.bind(this);
-
+		this.section1ref = createRef();
 	}
 	 // scrollDetect = () => {
 	  
@@ -169,7 +169,7 @@ class App extends Component {
 				{/*<img src={Marvel} />*/}
 			</div>
 			
-			<div className='section-1'  >
+			<div className='section-1' ref={this.section1ref} >
 				<CopyText headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owing the banner game." />
 
 				<Slideshow content={data2} cycleSpeed={3000} />

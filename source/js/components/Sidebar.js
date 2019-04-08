@@ -5,11 +5,17 @@ import '../../style/Sidebar.scss'
 class Sidebar extends Component {
 	constructor(props){
 		super(props);
-		this.clickToSection = this.clickToSection.bind(this);
+		this.clickToSection1 = this.clickToSection1.bind(this);
 	}
 
-	clickToSection = () => {
+	clickToSection1 = () => {
 		console.log('CLICKED!')
+		if(this.section1ref.current){
+            this.section1ref.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "nearest"
+            })
+        }
 	}
 	render(){
 		return(
@@ -18,7 +24,7 @@ class Sidebar extends Component {
 					 <img className='hamburger-icon' src='assets/images/hamburger.png'/>
 				</div>
 				<div className='circles'>
-					<img className='circle-1' src='assets/images/circle1.png' onClick={this.clickToSection}/>
+					<img className='circle-1' src='assets/images/circle1.png' onClick={this.clickToSection1}/>
 					<img className='circle-2' src='assets/images/circle2.png'/>
 					<img className='circle-3' src='assets/images/circle3.png'/>
 					<img className='circle-4' src='assets/images/circle4.png'/>
