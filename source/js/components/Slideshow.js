@@ -3,6 +3,7 @@ import { h, render, Component } from 'preact'
 import classNames from 'classNames'
 
 
+
 //create a JSON file with id, headline, subheadline, url for image, 
 //create a CarouselWrapper component - wrapper for entire layout and logic
 //create an ImageSlide component - current, image shown
@@ -54,9 +55,7 @@ class Slideshow extends Component {
       time: null
     })
   };
-  // scrolIntoView = () => {
-    
-  // }
+
 
   next = () => {
     const current = this.state.current
@@ -148,9 +147,9 @@ class Slideshow extends Component {
       <div class="slideshow">
         {!isLoading
           ? displaySlides
-          : (<h1>Error {error}</h1>)
+          : (<h1> {error}</h1>)
         }
-       {/* <p>Images from <a href="https://www.unsplash.com/" target="_blank">unsplash</a></p>*/}
+    
       </div>
     )
   }
