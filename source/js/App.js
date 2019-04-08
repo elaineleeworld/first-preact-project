@@ -27,11 +27,10 @@ var data9 = require('./data/TheLastSection.json')
 class App extends Component {
 	constructor(props){
 		super(props);
-		// this.scrollToNext = this.scrollToNext.bind(this);
-		// this.mySection = createRef();
-		// this.mySection1 = createRef();
-		// this.onScroll = this.onScroll.bind(this);
-		// this.scrollToTop = this.scrollToTop.bind(this);
+		
+		this.state = {
+			isOpened: true
+		}
 		this.heroRef = createRef();
 		this.section1ref = createRef();
 		this.section2ref = createRef();
@@ -47,7 +46,14 @@ class App extends Component {
 		this.clickToSection5 = this.clickToSection5.bind(this);
 		this.clickToSection6 = this.clickToSection6.bind(this);
 		this.clickToSection7 = this.clickToSection7.bind(this);
+		this.clickHamburger = this.clickHamburger.bind(this);
+
 	}
+
+	clickHamburger = () => {
+		console.log('HAMBURGER CLICKED!')
+		this.setState({ isOpened: !this.state.isOpened})
+	};
 	clickToTop = () => {
 		console.log('CLICKED to TOP!')
 		if(this.heroRef.current){
@@ -247,8 +253,9 @@ class App extends Component {
 			<div id='app'>
 			 <img className='red-logo' src='assets/images/REDproduction.png'/>
 			<div className="sidebar-container">
-				<div id='hamburger'>
-					 <img className='hamburger-icon' src='assets/images/hamburger.png'/>
+				<div id='hamburger' onClick={this.clickHamburger}>
+					 
+					  { this.state.isOpened ? <img className='hamburger-icon' src='assets/images/hamburger.png'/> : <img className='X-icon' src='assets/images/X.png'/> }
 				</div>
 				<div className='circles'>
 					<img className='circle-1' src='assets/images/circle1.png' onClick={this.clickToSection1}/>
