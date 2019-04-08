@@ -258,10 +258,10 @@ class App extends Component {
 					  { this.state.isOpened ? <img className='hamburger-icon' src='assets/images/hamburger.png'/> : <img className='X-icon' src='assets/images/X.png'/> }
 				</div>
 
-
+			<div className='divider-line'style={{display: this.state.isOpened ? 'block' : 'none' }} ></div>
 			<div className="sidebar-container">
 				
-				<div className='circles'>
+				<div className='circles' style={{display: this.state.isOpened ? 'block' : 'none' }}>
 					<img className='circle-1' src='assets/images/circle1.png' onClick={this.clickToSection1}/>
 					<img className='circle-2' src='assets/images/circle2.png' onClick={this.clickToSection2}/>
 					<img className='circle-3' src='assets/images/circle3.png' onClick={this.clickToSection3}/>
@@ -270,7 +270,7 @@ class App extends Component {
 					<img className='circle-6' src='assets/images/circle6.png' onClick={this.clickToSection6}/>
 					<img className='circle-7' src='assets/images/circle7.png' onClick={this.clickToSection7}/>
 				</div>
-				<div id='mouse' onClick={this.clickToTop}>
+				<div id='mouse' onClick={this.clickToTop} style={{display: this.state.isOpened ? 'block' : 'none' }}>
 					 <img className='mouse-icon' src='assets/images/mouse.png'/>
 				</div>
 			</div>
