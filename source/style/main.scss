@@ -201,8 +201,11 @@ a {
 
 @media only screen and (max-width: 600px){
   .copy-text-container{
-    width: 70vw;
+    width: 58vw;
     margin: 0 auto;
+  }
+  .copy-text{
+    left: -3%;
   }
   .red-logo{
     zoom: 0.8;

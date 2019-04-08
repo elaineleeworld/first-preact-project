@@ -32,6 +32,7 @@ class App extends Component {
 		// this.mySection1 = createRef();
 		// this.onScroll = this.onScroll.bind(this);
 		// this.scrollToTop = this.scrollToTop.bind(this);
+		this.heroRef = createRef();
 		this.section1ref = createRef();
 		this.section2ref = createRef();
 		this.section3ref = createRef();
@@ -47,6 +48,15 @@ class App extends Component {
 		this.clickToSection6 = this.clickToSection6.bind(this);
 		this.clickToSection7 = this.clickToSection7.bind(this);
 	}
+	clickToTop = () => {
+		console.log('CLICKED to TOP!')
+		if(this.heroRef.current){
+            this.heroRef.current.scrollIntoView({ 
+               behavior: "smooth", 
+               block: "start"
+            })
+        }
+	};
 	clickToSection1 = () => {
 		console.log('CLICKED 1!')
 		if(this.section1ref.current){
@@ -249,12 +259,12 @@ class App extends Component {
 					<img className='circle-6' src='assets/images/circle6.png' onClick={this.clickToSection6}/>
 					<img className='circle-7' src='assets/images/circle7.png' onClick={this.clickToSection7}/>
 				</div>
-				<div id='mouse'>
+				<div id='mouse' onClick={this.clickToTop}>
 					 <img className='mouse-icon' src='assets/images/mouse.png'/>
 				</div>
 			</div>
 			
-			<div id='hero' >
+			<div id='hero' ref={this.heroRef} >
 				<CopyText  headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
 				
 				<Slideshow content={data} cycleSpeed={3000} />
