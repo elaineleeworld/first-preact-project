@@ -51,13 +51,18 @@
   },
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.0.0-beta.47",
+    "@fullpage/react-fullpage": "^0.1.13",
     "classnames": "^2.2.6",
     "fullpage.js": "^3.0.4",
     "gh-pages": "^2.0.1",
     "preact": "^8.4.2",
     "preact-cli": "^2.2.1",
     "preact-compat": "^3.18.4",
+    "react-bootstrap": "^1.0.0-beta.6",
+    "react-page-scroller": "^1.4.3",
     "react-player": "^1.10.0",
-    "scroll-into-view": "^1.9.5"
+    "react-scrollmagic": "^2.1.0",
+    "scroll-into-view": "^1.9.5",
+    "styled-components": "^3.4.10"
   }
 }
