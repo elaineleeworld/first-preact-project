@@ -8,9 +8,7 @@ const CTA = ({ ...props }) => {
 	return (
 		<div
 			class='CTA'
-			onClick={() => {
-				alert('clicked')
-			}}
+			onClick={props.onClick}
 		>
 			{props.word}
 		</div>
