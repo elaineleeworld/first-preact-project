@@ -165,11 +165,12 @@ class App extends Component {
 			</div>
 			
 			<div className='section' ref={this.section4ref} data-anchor='section4'>
-			<CTA  word='DISCOVER VELVET'/>
+				<div className='cta-with-text'>
 			 	<CopyText headline="13x. That's how much faster we work." subheadline="We've developed in-house ad tech that creates dynamic campaigns, at scale, and much faster than conventional production methods. Including a product called Velvet - our favorite toy."/>
 				
 				<Slideshow content={data4} cycleSpeed={3000} />
-				
+				<CTA  word='DISCOVER VELVET'/>
+				</div>
 			</div>
 		
 			<div className='section' ref={this.section5ref} data-anchor='section5'>
@@ -193,12 +194,13 @@ class App extends Component {
 			<div className='section' ref={this.section8ref} data-anchor='section8'>
 			
 			
-			
+			<div className='cta-with-text'>
 			 	<CopyText headline="Tons of happy clients use our skills every day." subheadline="They're too many to count. But they include some big names in sports, streaming entertainment, and beverage - and one kinda famous mouse."/>
-				<CTA word='LATEST WORK' onClick={this.showModal} />
+				
 		
 				<Slideshow content={data8} cycleSpeed={3000} />
-				
+				<CTA word='LATEST WORK' onClick={this.showModal} />
+				</div>
 			</div>
 			
 			<div className='section' ref={this.section9ref} data-anchor='section9'>

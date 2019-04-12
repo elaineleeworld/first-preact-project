@@ -91,7 +91,17 @@ a {
  
 }
 
-
+.cta-with-text{
+  position:relative;
+  /*z-index: 100;*/
+  /*left: 70px;*/
+  vertical-align: top; 
+  height: 100vh;
+  width: 90vw;
+  /*padding-top: 30px;*/
+  display:flex;
+  flex-direction: column;
+}
 
 .red-logo {
     position: fixed;
@@ -189,7 +199,7 @@ a {
 .hamburger-list-container::before {
   content: '';
     width: 2px;
-    height: 75%;
+    height: 45%;
     background-color: #b3b3b3;
     position: fixed;
     
