@@ -1,18 +1,9 @@
 .CTA {
- 
- /* width: 150px;
-  height: 40px;
-  z-index: 10;
-  padding: 5px 8px;
-  border: 1px red solid;
-  cursor: pointer;
-  color: white;
-  background-color: black;*/
-   position: absolute;
+  position: absolute;
   z-index: 200;
-  left: 72px;
+  left: 70px;
   /*bottom: 150px; */
-  margin-top: 500px;
+  /*margin-top: 500px;*/
   height: 40px;
   width: 210px;
   cursor: pointer;
@@ -21,6 +12,22 @@
   text-align:center;
   line-height: 40px;
   font-family: SharpGroteskMedium25;
- 
+  margin-top: 475px;
 
+}
+
+
+@media only screen and (max-width: 900px){
+	.CTA{
+	left: 65px;
+	margin-top: 520px;
+	
+}
+}
+@media only screen and (max-width: 600px){
+	.CTA{
+	left: 60px;
+	margin-top: 485px;
+	
+}
 }

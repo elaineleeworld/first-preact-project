@@ -191,11 +191,12 @@ class App extends Component {
 			</div>
 		
 			<div className='section' ref={this.section8ref} data-anchor='section8'>
-			<CTA word='LATEST WORK' onClick={this.showModal} />
+			
 			
 			
 			 	<CopyText headline="Tons of happy clients use our skills every day." subheadline="They're too many to count. But they include some big names in sports, streaming entertainment, and beverage - and one kinda famous mouse."/>
-				 
+				<CTA word='LATEST WORK' onClick={this.showModal} />
+		
 				<Slideshow content={data8} cycleSpeed={3000} />
 				
 			</div>
