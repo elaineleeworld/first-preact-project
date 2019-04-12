@@ -18,11 +18,11 @@ const Modal = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className='modal-main'>
         {children}
-        <button
+        <img className='video-close-icon' src='assets/images/X.png'
           onClick={handleClose}
-        >
-          Close
-        </button>
+        
+        
+        />
       </section>
     </div>
   );

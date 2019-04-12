@@ -269,9 +269,9 @@ ul {
 }
   
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 1000px){
   .slideshow__container{
-    min-width: 700px;
+    min-width: 700px ;
     /*width: 100vw;*/
   }
   .copy-text-container{
@@ -340,6 +340,7 @@ ul {
   .top-icon {
     padding-top: 80px;
   }
+
 }
 
 

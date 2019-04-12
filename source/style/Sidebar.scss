@@ -47,11 +47,24 @@
 	cursor:pointer;
 }
 
-
+@media only screen and (max-width: 600px){
+    .divider-line {
+        display: none !important;
+    }
+    .sidebar-container {
+        display: none;
+    }
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* iPhone, Android rules here */
   .circles {
     padding-top: 80px;
+
   }
+  .sidebar-container{
+    display:none;
+  }
+ 
+
 }

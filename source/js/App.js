@@ -91,7 +91,7 @@ class App extends Component {
 			);
 		document.documentElement.style.overflow = 'scroll';
  document.body.scroll = "yes";
- ReactPlayer.pause()
+
 	}
 	
 	
