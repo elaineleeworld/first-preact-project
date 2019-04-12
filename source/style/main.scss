@@ -74,6 +74,11 @@ a {
   text-decoration: none;
 }
 
+.hero-cta-styling{
+  color: black;
+  background-color: red;
+}
+
 .section{
    height: 100%;
    width: 100%;
@@ -103,6 +108,9 @@ a {
   flex-direction: column;
 }
 
+.top-icon{
+  padding-top: 40px;
+}
 .red-logo {
     position: fixed;
     top: 56px;
@@ -301,6 +309,36 @@ ul {
    
     width: 60vw;
     font-size: 18px;
+  }
+}
+
+@media only screen and (device-width: 768px) and (orientation: landscape) {
+  /* rules for iPad in landscape orientation */
+  .sidebar-container {
+    top: 250px;
+  }
+  .top-icon{
+    padding-top: 300px;
+  }
+  
+}@media only screen and (device-width: 980px) and (orientation: portrait) {
+  /* rules for iPad in portrait orientation */
+  .sidebar-container {
+    top: 250px;
+  }
+  .top-icon{
+    padding-top: 300px;
+  }
+  
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* iPhone, Android rules here */
+  .sidebar-container {
+    top: 80px;
+  }
+  .top-icon {
+    padding-top: 80px;
   }
 }
 

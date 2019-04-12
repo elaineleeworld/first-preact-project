@@ -102,7 +102,7 @@ class App extends Component {
 			<Modal show={this.state.show} handleClose={this.hideModal} > 
 		       
  			<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width='100%'
-          height='100%' />
+          height='100%' playing={this.state.show}/>
 		
 	        </Modal> 
 			
@@ -127,7 +127,8 @@ class App extends Component {
 					{/*<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section9ref.current)} data-menuanchor='section9'/>*/}
 				</div>
 				<div id='mouse' onClick={() => this.clickToSection(this.section1ref.current)} style={{display: this.state.isOpened ? 'block' : 'none' }}>
-					 <img className='mouse-icon' src='assets/images/mouse.png'/>
+					 {/*<img className='mouse-icon' src='assets/images/mouse.png'/>*/}
+					 <img className='top-icon' src='assets/images/backtotop.png'/>
 				</div>
 			</div>
 
@@ -145,10 +146,15 @@ class App extends Component {
      		<div className='content-container'>
      		
 			<div className='section' ref={this.section1ref} data-anchor='section1'>
+			
 				<CopyText  headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
 				
 				<Slideshow content={data} cycleSpeed={3000} />
+			
+				
+				
 				{/*<img src={Marvel} />*/}
+			
 			</div>
 			
 			<div className='section' ref={this.section2ref} data-anchor='section2'>

@@ -37,7 +37,7 @@
 
 
 .circles {
-	padding-top: 100px;
+	padding-top: 200px;
 	display: block;
 	line-height: 18px;
 	cursor: pointer;
@@ -45,4 +45,13 @@
 .mouse-icon {
 	padding-top:110px;
 	cursor:pointer;
+}
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* iPhone, Android rules here */
+  .circles {
+    padding-top: 80px;
+  }
 }

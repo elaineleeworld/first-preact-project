@@ -2,10 +2,10 @@
   position: relative;
   z-index: 200;
   left: 70px;
-  bottom: 170px; 
+  bottom: 200px; 
   /*margin-top: 500px;*/
   height: 40px;
-  width: 210px;
+  width: 250px;
   cursor: pointer;
   color: red;
   background-color: black;
@@ -21,7 +21,7 @@
 @media only screen and (max-width: 900px){
 	.CTA{
 	left: 65px;
-	bottom: 150px;
+	bottom: 200px;
 	font-size: 20px;
 	
 	
@@ -30,11 +30,11 @@
 @media only screen and (max-width: 600px){
 	.CTA{
 	left: 60px;
-	bottom: 160px;
+	bottom: 250px;
 	font-size: 10px;
 	height:20px;
 	line-height: 20px;
-  width: 105px;
+  width: 125px;
 	
 	
 }

@@ -1,13 +1,16 @@
 // Demo Functional Component
 
 import { h, render, Component } from 'preact'
+// import classNames from 'classNames'
 
 import '../../style/CTA.scss'
+
+
 
 const CTA = ({ ...props }) => {
 	return (
 		<div
-			class='CTA'
+			class='CTA' 
 			onClick={props.onClick}
 		>
 			{props.word}
