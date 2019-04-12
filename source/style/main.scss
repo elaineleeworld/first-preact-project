@@ -199,7 +199,7 @@ a {
 .hamburger-list-container::before {
   content: '';
     width: 2px;
-    height: 45%;
+    height: 75%;
     background-color: #b3b3b3;
     position: fixed;
     
@@ -208,7 +208,7 @@ a {
 }
 ul {
   list-style-type: none;
-  width: 45vw;
+ 
   line-height: 2.2;
   padding-top: 120px;
 
