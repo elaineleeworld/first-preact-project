@@ -3,11 +3,13 @@ import { h, render, Component } from 'preact'
 import '../../style/CopyText.scss'
 
 class CopyText extends Component {
+
 	
 	constructor(props){
 		super(props);
 		this.state = {
-			showComponent: false
+			showComponent: false,
+			opacity: 0
 		}
 	}
     componentWillMount() {
@@ -18,12 +20,20 @@ class CopyText extends Component {
     };
     show = function () {
         this.setState({showComponent: true});
+        setTimeout(() =>
+        this.setState({ opacity: 1 }), 20 // something very short
+      )
     };
 	render() {
-		
+	
 
 		return (
-			<div className='copy-text-container' style={{display: this.state.showComponent ? 'block' : 'none'}}>
+			<div className='copy-text-container' 
+			style={{
+				display: this.state.showComponent ? 'block' : 'none',
+				transition: 'opacity 1s ease',
+            	opacity: this.state.opacity
+			}} >
 				
 				<div className='copy-text' >
 				 <h1>{this.props.headline}</h1>

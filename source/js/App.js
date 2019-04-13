@@ -158,7 +158,7 @@ class App extends Component {
 			</div>
 			
 			<div className='section' ref={this.section2ref} data-anchor='section2'>
-				<CopyText   wait={1000} headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owing the banner game." />
+				<CopyText className='fade-in' wait={1000} headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owing the banner game." />
 
 				<Slideshow content={data2} cycleSpeed={3000} />
 			</div>
