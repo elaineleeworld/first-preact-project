@@ -147,7 +147,7 @@ class App extends Component {
      		
 			<div className='section' ref={this.section1ref} data-anchor='section1'>
 			
-				<CopyText  headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
+				<CopyText  wait={1000} headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
 				
 				<Slideshow content={data} cycleSpeed={3000} />
 			
@@ -158,41 +158,41 @@ class App extends Component {
 			</div>
 			
 			<div className='section' ref={this.section2ref} data-anchor='section2'>
-				<CopyText headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owing the banner game." />
+				<CopyText   wait={1000} headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owing the banner game." />
 
 				<Slideshow content={data2} cycleSpeed={3000} />
 			</div>
 				
 			<div className='section' ref={this.section3ref} data-anchor='section3'>
 
-				<CopyText headline="0.5 seconds is the average time spend on a social ad. We've got that beat." subheadline="Our mission: stop the scroll. Whether they're planned weeks in advance or bult on the fly, our social ads stand out in a feed."/>
+				<CopyText  wait={1000} headline="0.5 seconds is the average time spend on a social ad. We've got that beat." subheadline="Our mission: stop the scroll. Whether they're planned weeks in advance or bult on the fly, our social ads stand out in a feed."/>
 				
 				<Slideshow content={data3} cycleSpeed={3000} />
 			</div>
 			
 			<div className='section' ref={this.section4ref} data-anchor='section4'>
 				<div className='cta-with-text'>
-			 	<CopyText headline="13x. That's how much faster we work." subheadline="We've developed in-house ad tech that creates dynamic campaigns, at scale, and much faster than conventional production methods. Including a product called Velvet - our favorite toy."/>
+			 	<CopyText  wait={1000} headline="13x. That's how much faster we work." subheadline="We've developed in-house ad tech that creates dynamic campaigns, at scale, and much faster than conventional production methods. Including a product called Velvet - our favorite toy."/>
 				
 				<Slideshow content={data4} cycleSpeed={3000} />
-				<CTA  word='DISCOVER VELVET'/>
+				<CTA  wait={1000} word='DISCOVER VELVET'/>
 				</div>
 			</div>
 		
 			<div className='section' ref={this.section5ref} data-anchor='section5'>
-			 	<CopyText headline="100% of our code is open-source, self-compiling, and compatible with all networks." subheadline="So it just, you know... works." />
+			 	<CopyText  wait={1000} headline="100% of our code is open-source, self-compiling, and compatible with all networks." subheadline="So it just, you know... works." />
 				 
 				<Slideshow content={data5} cycleSpeed={3000} />
 			</div>
 			
 			<div className='section' ref={this.section6ref} data-anchor='section6'>
-			 	<CopyText headline="6 partners consult with us about how to make their platforms work better." subheadline="You may have heard of them." />
+			 	<CopyText  wait={1000} headline="6 partners consult with us about how to make their platforms work better." subheadline="You may have heard of them." />
 				
 				<Slideshow content={data6} cycleSpeed={3000} />
 			</div>
 			
 			<div className='section' ref={this.section7ref} data-anchor='section7'>
-			 	<CopyText headline="100% of our in-house team knows the platforms inside and out." subheadline="We've got project managers who know the tech like they coded it. Developers with backgrounds in design and animation.  A company-wide expertise in all things social.  We can build what you need, but we can also advise on how to get the most out of every platform." />
+			 	<CopyText wait={1000} headline="100% of our in-house team knows the platforms inside and out." subheadline="We've got project managers who know the tech like they coded it. Developers with backgrounds in design and animation.  A company-wide expertise in all things social.  We can build what you need, but we can also advise on how to get the most out of every platform." />
 				
 				<Slideshow content={data7} cycleSpeed={3000} />
 			</div>
@@ -201,16 +201,16 @@ class App extends Component {
 			
 			
 			<div className='cta-with-text'>
-			 	<CopyText headline="Tons of happy clients use our skills every day." subheadline="They're too many to count. But they include some big names in sports, streaming entertainment, and beverage - and one kinda famous mouse."/>
+			 	<CopyText  wait={1000} headline="Tons of happy clients use our skills every day." subheadline="They're too many to count. But they include some big names in sports, streaming entertainment, and beverage - and one kinda famous mouse."/>
 				
 		
 				<Slideshow content={data8} cycleSpeed={3000} />
-				<CTA word='LATEST WORK' onClick={this.showModal} />
+				<CTA  wait={1000} word='LATEST WORK' onClick={this.showModal} />
 				</div>
 			</div>
 			
 			<div className='section' ref={this.section9ref} data-anchor='section9'>
-			 <CopyText headline="Give us a test project." subheadline="From developing ads to consulting on campaign tech, we're ready to help."/>
+			 <CopyText wait={1000} headline="Give us a test project." subheadline="From developing ads to consulting on campaign tech, we're ready to help."/>
 				 {/*<div >
 					 
 					 <h3>newbiz@WeAreRED.com  <span>  |  310 399.4242</span> </h3>
