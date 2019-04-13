@@ -305,10 +305,14 @@ ul {
     min-width: 400px;
     /*width: 100vw;*/
   }
+  
   .hamburger-list-container {
-   
+    float: none;
     width: 60vw;
-    font-size: 18px;
+    font-size: 22px;
+  }
+  .hamburger-list-container::before {
+    display: none;
   }
 }
 
