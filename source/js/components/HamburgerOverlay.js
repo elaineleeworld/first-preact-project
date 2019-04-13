@@ -1,6 +1,8 @@
 import { h, render, Component } from 'preact'
 import ReactPlayer from 'react-player'
 
+import '../../style/HamburgerOverlay.scss'
+
 class HamburgerOverlay extends Component {
 	render(){
 		return(

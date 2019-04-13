@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact'
 
-import '../../style/main.scss'
+import '../../style/CopyText.scss'
 
 class CopyText extends Component {
 	
