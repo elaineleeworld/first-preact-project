@@ -11,6 +11,7 @@ import ReactPlayer from 'react-player'
 // import { Controller, Scene } from 'react-scrollmagic';
 // var scrollIntoView = require('scroll-into-view');
 import ReactFullpage from '@fullpage/react-fullpage';
+import Delay from 'react-delay-render';
 
 
 // import introJSON from './api/SlideData'
@@ -260,6 +261,6 @@ class App extends Component {
 }
 }
 	
+export default Delay({ delay: 200, onRender: render })(App)
 
-
-export default App
+// export default App
