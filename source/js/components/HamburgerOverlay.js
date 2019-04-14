@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 import {Router} from 'preact-router';
 import { Link, Match } from 'preact-router/match';
 import Slideshow from'./Slideshow'
-import lifecycle from 'react-pure-lifecycle';
+
 import ReactDelayRender from 'react-delay-render';
 import Delay from 'react-delay-render';
 
