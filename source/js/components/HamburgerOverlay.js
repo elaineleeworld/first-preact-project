@@ -1,31 +1,135 @@
 import { h, render, Component } from 'preact'
 import ReactPlayer from 'react-player'
+import {Router} from 'preact-router';
+import { Link, Match } from 'preact-router/match';
+import Slideshow from'./Slideshow'
+import lifecycle from 'react-pure-lifecycle';
 
 import '../../style/HamburgerOverlay.scss'
 
-class HamburgerOverlay extends Component {
-	render(){
-		return(
-			<div className="hamburger-overlay-container">
+//  const methods = {
+// 	  componentWillMount(props) {
+// 	    console.log('I mounted! Here are my props: ', props);
+// 	     setTimeout(function() {
+//            HamburgerOverlay();
+//         }, 2000);
+// 	  }
+// };
+
+const HamburgerOverlay = ({ handleClose, show, children }) => {
+  const showHideClassName = show ? 'hamburger-overlay-container display-block' : 'hamburger-overlay-container display-none';
+ // const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+  return (
+  	<div className="hamburger-overlay-container" className={showHideClassName}>
+  	<img className='red-logo' src='assets/images/REDproduction.png'/>
 				<div className='hamburger-list-container'>
 					<div className='overlay-divider-line'>
-
-					<ul>
-						<li>Home</li>
-						<li>Latest Work</li>
-						<li>Discover Velvet</li>
-						<li>Contact Us</li>
-						<li>Careers</li>
-					</ul>
+					{children}
+					{/*<Router>
+						<Slideshow path='/'/>*/}
+						{/*<Work path='/latest-work'/>*/}
+						{/*<Velvet path='/discover-velvet'/>*/}
+						{/*<Contact path='/contact'/>*/}
+						{/*<Careers path='/careers'/>*/}
+					{/*</Router>*/}
+					 
+    <Match path="/">
+      { ({ matches, path, url }) => (
+        		<ul>
+      <li href="/" onClick={(e) => this.props.closeOverlay(e.target.value)}>Home</li>
+      <li href="/work" onClick={(e) => this.props.linkToSection7(e.target.value)}>Latest Work</li>
+      <li href="/velvet" onClick={(e) => this.props.linkToSection3(e.target.value)}>Discover Velvet</li>
+      <li href="/contact" onClick={(e) => this.props.linkToSection8(e.target.value)}>Contact Us</li>
+      <li href="/careers" onClick={(e) => this.props.urlLink(e.target.value)}>Careers</li>
+    </ul>
+      ) }
+    </Match>
+		 <img className='overlay-close-icon' src='assets/images/X.png'
+          onClick={handleClose}  />
+   
 					</div>
 				</div>
 			</div>
 
 
-
-
-			)
-	}
+);
 }
+   
+       
+ 
+// class HamburgerOverlay extends Component {
+// 	constructor(props){
+// 		super(props);
+// 		this.state = {
+// 			showComponent: false
+// 		}
 
-export default HamburgerOverlay
+// 	}
+// 	componentWillMount() {
+//         var that = this;
+//         setTimeout(function() {
+//             that.show();
+//         }, 100);
+//         // setTimeout(function() {
+//         //     that.noShow();
+//         // }, 101);
+//     };
+//     show = function () {
+//         this.setState({showComponent: true});
+//      //    document.documentElement.style.overflow = 'hidden';
+//    		// document.body.scroll = "no";
+      
+//     };
+//     noShow = function () {
+//         this.setState({showComponent: false});
+//    //      document.documentElement.style.overflow = 'scroll';
+//  		// document.body.scroll = "yes";
+      
+       
+//     };
+// 	render(showMenu, props){
+// 		return(
+
+			
+// 			<div id="hamburger-overlay-container" className={this.showMenu ? 'hamburger-overlay-container display-block' : 'hamburger-overlay-container display-none'} style={{
+// 				display: this.state.showComponent ? 'block' : 'none'
+// 			}} >
+// 				<div className='hamburger-list-container'>
+// 					<div className='overlay-divider-line'>
+// <img className='red-logo' src='assets/images/REDproduction.png'/>
+// 					{/*<Router>
+// 						<Slideshow path='/'/>*/}
+// 						{/*<Work path='/latest-work'/>*/}
+// 						{/*<Velvet path='/discover-velvet'/>*/}
+// 						{/*<Contact path='/contact'/>*/}
+// 						{/*<Careers path='/careers'/>*/}
+// 					{/*</Router>*/}
+					 
+//     <Match path="/">
+//       { ({ matches, path, url }) => (
+//         		<ul>
+//       <li href="/" onClick={(e) => this.props.closeOverlay(e.target.value)}>Home</li>
+//       <li href="/work" onClick={(e) => this.props.linkToSection7(e.target.value)}>Latest Work</li>
+//       <li href="/velvet" onClick={(e) => this.props.linkToSection3(e.target.value)}>Discover Velvet</li>
+//       <li href="/contact" onClick={(e) => this.props.linkToSection8(e.target.value)}>Contact Us</li>
+//       <li href="/careers" onClick={(e) => this.props.urlLink(e.target.value)}>Careers</li>
+//     </ul>
+//       ) }
+//     </Match>
+//     <img className='overlay-close-icon' src='assets/images/X.png' onClick={() => this.noShow()}  />
+		
+   
+// 					</div>
+// 				</div>
+// 			</div>
+
+
+
+
+// 			)
+// 	}
+// }
+
+
+
+export default HamburgerOverlay;

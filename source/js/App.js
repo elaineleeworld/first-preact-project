@@ -38,7 +38,8 @@ class App extends Component {
 		
 		this.state = {
 			isOpened: true,
-			show: false
+			show: false,
+			showmenu: false
 		}
 		// this.heroRef = createRef();
 		this.section1ref = createRef();
@@ -56,15 +57,28 @@ class App extends Component {
 	
 
 	}
+	componentDidMount() {
+		console.log('APP mounted!')
+		
+	}
 
 	clickHamburger = () => {
 		console.log('HAMBURGER CLICKED!')
 		this.setState({ isOpened: !this.state.isOpened})
+		//shows X
+
+
+	};
+	closeOverlay = () => {
+		console.log('Overlay closed!')
+		this.setState({ isOpened: !this.state.isOpened})
+
 
 	};
 
 	clickToSection = (currentRef) => {
 		console.log('CLICKED TO SECTION!')
+		
 		if(currentRef){
             currentRef.scrollIntoView({ 
                behavior: "smooth", 
@@ -80,7 +94,7 @@ class App extends Component {
 			}
 			);
 		document.documentElement.style.overflow = 'hidden';
-   document.body.scroll = "no";
+   		document.body.scroll = "no";
 
 	};
 	hideModal = () => {
@@ -90,7 +104,31 @@ class App extends Component {
 				}
 			);
 		document.documentElement.style.overflow = 'scroll';
- document.body.scroll = "yes";
+ 		document.body.scroll = "yes";
+
+	};
+	showOverlay = () => {
+		console.log('SHOW OVERLAY')
+		this.setState(
+			{showmenu: true, 
+			}
+			);
+		document.documentElement.style.overflow = 'hidden';
+		// document.getElementById('hamburger-overlay-container').style.display='block';
+		// document.documentElement.style.display = 'block';
+   		document.body.scroll = "no";
+
+	};
+	hideOverlay = () => {
+		console.log('HIDE OVERLAY')
+		this.setState(
+			{showmenu: false,
+				}
+			);
+		document.documentElement.style.overflow = 'scroll';
+		// document.getElementById('hamburger-overlay-container').style.display='none';
+		// document.documentElement.style.display = 'none';
+ 		document.body.scroll = "yes";
 
 	}
 	
@@ -99,6 +137,8 @@ class App extends Component {
 		
 		return (
 			<div id='app'>
+			 <HamburgerOverlay show={this.state.showmenu} handleClose={this.hideOverlay}    />
+
 			<Modal show={this.state.show} handleClose={this.hideModal} > 
 		       
  			<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width='100%'
@@ -107,15 +147,18 @@ class App extends Component {
 	        </Modal> 
 			
 			<img className='red-logo' src='assets/images/REDproduction.png'/>
-			 <div id='hamburger' onClick={this.clickHamburger}>
-					 
-					  { this.state.isOpened ? <img className='hamburger-icon' src='assets/images/hamburger.png'/> : <img className='X-icon' src='assets/images/X.png'/> }
-				</div>
 
-			<div className='divider-line'style={{display: this.state.isOpened ? 'block' : 'none' }} ></div>
-			<div className="sidebar-container">
+			
+				<div>
+			 <div id='hamburger'   >
+					 <img className='hamburger-icon' src='assets/images/hamburger.png' onClick={this.showOverlay}/>
+					 
+				</div> 
+
+			<div className='divider-line'  ></div>
+			<div className="sidebar-container" >
 				
-				<div className='circles' style={{display: this.state.isOpened ? 'block' : 'none' }}>
+				<div className='circles' >
 					{/*<img className='circle-1' src='assets/images/circle1.png' onClick={() => this.clickToSection(this.section1ref.current)} data-menuanchor='section1'/>*/}
 					<img className='circle-1' src='assets/images/circle1.png' onClick={() => this.clickToSection(this.section2ref.current)} data-menuanchor='section2'/>
 					<img className='circle-2' src='assets/images/circle2.png' onClick={() => this.clickToSection(this.section3ref.current)} data-menuanchor='section3'/>
@@ -126,26 +169,18 @@ class App extends Component {
 					<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section8ref.current)} data-menuanchor='section8'/>
 					{/*<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section9ref.current)} data-menuanchor='section9'/>*/}
 				</div>
-				<div id='mouse' onClick={() => this.clickToSection(this.section1ref.current)} style={{display: this.state.isOpened ? 'block' : 'none' }}>
+				<div id='mouse' onClick={() => this.clickToSection(this.section1ref.current)} style={{display: !this.state.showmenu ? 'block' : 'none' }}>
 					 {/*<img className='mouse-icon' src='assets/images/mouse.png'/>*/}
 					 <img className='top-icon' src='assets/images/backtotop.png'/>
 				</div>
 			</div>
+			</div> 
 
-			{ this.state.isOpened ? 
-				// <ReactFullpage 
-				// anchors={anchors}
-
-    // 			render={({ state, fullpageApi }) => {
-    // 				console.log('STATE', state)
-    // 				console.log('FULLPAGEAPI', fullpageApi)
-    // 				return(
-			 // <ReactFullpage.Wrapper >
-      		
+			
 
      		<div className='content-container'>
      		
-			<div className='section' ref={this.section1ref} data-anchor='section1'>
+			<div className='home' className='section' ref={this.section1ref} data-anchor='section1'>
 			
 				<CopyText  wait={1000} headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
 				
@@ -200,7 +235,7 @@ class App extends Component {
 			<div className='section' ref={this.section8ref} data-anchor='section8'>
 			
 			
-			<div className='cta-with-text'>
+			<div className='work' className='cta-with-text'>
 			 	<CopyText  wait={1000} headline="Tons of happy clients use our skills every day." subheadline="They're too many to count. But they include some big names in sports, streaming entertainment, and beverage - and one kinda famous mouse."/>
 				
 		
@@ -209,7 +244,7 @@ class App extends Component {
 				</div>
 			</div>
 			
-			<div className='section' ref={this.section9ref} data-anchor='section9'>
+			<div className='contact' className='section' ref={this.section9ref} data-anchor='section9'>
 			 <CopyText wait={1000} headline="Give us a test project." subheadline="From developing ads to consulting on campaign tech, we're ready to help."/>
 				 {/*<div >
 					 
@@ -217,18 +252,14 @@ class App extends Component {
 				  </div>*/}
 				<Slideshow content={data9} cycleSpeed={3000} />
 			</div>
-			</div>
-// 			 </ReactFullpage.Wrapper> 
-// 		 )
-// }}
-// /> 
-: <HamburgerOverlay/>}
+			
  
-</div>
-		)
-	}
-
-	
+			</div>
+			</div>
+)
 }
+}
+	
+
 
 export default App
