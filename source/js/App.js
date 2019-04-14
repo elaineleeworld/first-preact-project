@@ -57,11 +57,11 @@ class App extends Component {
 		;
 	
 
-	}
+	};
 	componentDidMount() {
 		console.log('APP mounted!')
 		
-	}
+	};
 
 	clickHamburger = () => {
 		console.log('HAMBURGER CLICKED!')
@@ -79,7 +79,10 @@ class App extends Component {
 
 	clickToSection = (currentRef) => {
 		console.log('CLICKED TO SECTION!')
-		
+		this.setState(
+			{showmenu: false,
+				}
+			);
 		if(currentRef){
             currentRef.scrollIntoView({ 
                behavior: "smooth", 
@@ -126,19 +129,43 @@ class App extends Component {
 			{showmenu: false,
 				}
 			);
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		})
 		document.documentElement.style.overflow = 'scroll';
 		// document.getElementById('hamburger-overlay-container').style.display='none';
 		// document.documentElement.style.display = 'none';
  		document.body.scroll = "yes";
-
 	}
+	moveToContact = () => {
+		console.log('HIDE OVERLAY')
+		this.setState(
+			{showmenu: false,
+				}
+			);
+		window.scrollTo({
+			top: 5500,
+			behavior: 'smooth'
+		})
+		document.documentElement.style.overflow = 'scroll';
+		// document.getElementById('hamburger-overlay-container').style.display='none';
+		// document.documentElement.style.display = 'none';
+ 		document.body.scroll = "yes";
+	}
+
 	
 	
 	render(props, states) {
 		
 		return (
 			<div id='app'>
-			 <HamburgerOverlay show={this.state.showmenu} handleClose={this.hideOverlay}    />
+			 <HamburgerOverlay 
+			 show={this.state.showmenu} 
+			 handleClose={this.hideOverlay}
+			 handleClose2={this.showModal}
+			 handleClose4={this.moveToContact}
+			 />
 
 			<Modal show={this.state.show} handleClose={this.hideModal} > 
 		       

@@ -18,7 +18,7 @@ import '../../style/HamburgerOverlay.scss'
 // 	  }
 // };
 
-const HamburgerOverlay = ({ handleClose, show, children }) => {
+const HamburgerOverlay = ({ handleClose, handleClose2, handleClose3, handleClose4, show, children }) => {
   const showHideClassName = show ? 'hamburger-overlay-container display-block' : 'hamburger-overlay-container display-none';
  // const showHideClassName = show ? 'modal display-block' : 'modal display-none';
   return (
@@ -35,17 +35,19 @@ const HamburgerOverlay = ({ handleClose, show, children }) => {
 						{/*<Careers path='/careers'/>*/}
 					{/*</Router>*/}
 					 
-    <Match path="/">
-      { ({ matches, path, url }) => (
+   
         		<ul>
-      <li href="/" onClick={(e) => this.props.closeOverlay(e.target.value)}>Home</li>
-      <li href="/work" onClick={(e) => this.props.linkToSection7(e.target.value)}>Latest Work</li>
-      <li href="/velvet" onClick={(e) => this.props.linkToSection3(e.target.value)}>Discover Velvet</li>
-      <li href="/contact" onClick={(e) => this.props.linkToSection8(e.target.value)}>Contact Us</li>
-      <li href="/careers" onClick={(e) => this.props.urlLink(e.target.value)}>Careers</li>
+      <li href="/" onClick={handleClose} >Home</li>
+      <li href="/work" onClick={handleClose2}>Latest Work</li>
+      <li href="/velvet" onClick={() => {
+							window.location.href = 'https://www.velvet.tech'
+						}}>Discover Velvet</li>
+      <li href="/contact" onClick={handleClose4}>Contact Us</li>
+      <li href="/careers" onClick={() => {
+							window.location.href = 'http://www.wearered.com'
+						}}>Careers</li>
     </ul>
-      ) }
-    </Match>
+    
 		 <img className='overlay-close-icon' src='assets/images/X.png'
           onClick={handleClose}  />
    
