@@ -286,6 +286,9 @@ class App extends Component {
 			 	<CopyText  wait={1000} headline="6 partners consult with us about how to make their platforms work better." subheadline="You may have heard of them." />
 				
 				<Slideshow content={data6} cycleSpeed={3000} />
+				<div className='partner-logos'>
+					<img src='assets/images/partner_logos.png'/>
+				</div>
 			</div>
 			
 			<div className='section' ref={this.section7ref} data-anchor='section7'>

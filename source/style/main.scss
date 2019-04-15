@@ -89,6 +89,14 @@ a {
   animation: fade-in ease 3s;
 }
 
+.partner-logos{
+ position:absolute;
+ z-index: 10;
+ margin-top: -150px;
+ margin-left: 70px;
+ 
+}
+
 
 
 .scroll-icon-container--hidden{
@@ -176,6 +184,13 @@ a {
   .slideshow__container{
     height: 100vh;
   }
+  .partner-logos{
+    zoom: 0.8;
+
+    margin-left: 90px;
+   
+  
+  }
   
 }
   
@@ -201,7 +216,14 @@ a {
     min-width: 400px;
     /*width: 100vw;*/
   }
-  
+  .scroll-icon-container{
+    zoom: 0.7;
+  }
+  .partner-logos {
+    zoom: 0.5;
+    margin-left: 120px;
+    margin-top: -300px;
+  }
  
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
