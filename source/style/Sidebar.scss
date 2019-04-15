@@ -3,7 +3,7 @@
     position: absolute;
     width: 50px;
     right: 35px;
-    top: 60px;
+    top: 20px;
     z-index: 10;
     /*border-left: 2px solid white;*/
     padding: 0 20px;
@@ -22,7 +22,7 @@
 }*/
 .divider-line{
 	content: '';
-    width: 2px;
+    width: 1px;
     height: 85%;
     background-color: white;
     position: fixed;
@@ -34,6 +34,21 @@
 .hamburger-icon{
 	cursor:pointer;
 }
+.top-icon {
+  display:table-cell; 
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  text-align:center;
+  padding-bottom: 30px;
+  vertical-align:bottom; 
+  opacity: 1;
+  animation: fade-in ease 3s;
+ 
+}
+.top-icon--hidden{
+  top: -150px;
+}
 
 
 .circles {
@@ -41,6 +56,8 @@
 	display: block;
 	line-height: 18px;
 	cursor: pointer;
+  max-width: 100%;
+  height: auto;
 }
 .mouse-icon {
 	padding-top:110px;

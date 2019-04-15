@@ -12,11 +12,8 @@ import ReactPlayer from 'react-player'
 // var scrollIntoView = require('scroll-into-view');
 import ReactFullpage from '@fullpage/react-fullpage';
 import Delay from 'react-delay-render';
+import classnames from "classnames";
 
-
-// import introJSON from './api/SlideData'
-// import introJSON from '../SlideData.json'
-// import * as introJSON from '../../SlideData.json'
 
 // import Marvel from '../assets/images/netflix-marvel-text.png'
 var data = require('./data/Hero.json')
@@ -40,7 +37,9 @@ class App extends Component {
 		this.state = {
 			isOpened: true,
 			show: false,
-			showmenu: false
+			showmenu: false,
+			prevScrollpos: window.pageYOffset,
+      		visible: true
 		}
 		// this.heroRef = createRef();
 		this.section1ref = createRef();
@@ -59,9 +58,24 @@ class App extends Component {
 
 	};
 	componentDidMount() {
-		console.log('APP mounted!')
-		
-	};
+    window.addEventListener("scroll", this.handleScroll);
+  };
+
+  // Remove the event listener when the component is unmount.
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  };
+   handleScroll = () => {
+    const { prevScrollpos } = this.state;
+
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
+
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible
+    });
+  };
 
 	clickHamburger = () => {
 		console.log('HAMBURGER CLICKED!')
@@ -188,18 +202,34 @@ class App extends Component {
 				
 				<div className='circles' >
 					{/*<img className='circle-1' src='assets/images/circle1.png' onClick={() => this.clickToSection(this.section1ref.current)} data-menuanchor='section1'/>*/}
-					<img className='circle-1' src='assets/images/circle1.png' onClick={() => this.clickToSection(this.section2ref.current)} data-menuanchor='section2'/>
-					<img className='circle-2' src='assets/images/circle2.png' onClick={() => this.clickToSection(this.section3ref.current)} data-menuanchor='section3'/>
-					<img className='circle-3' src='assets/images/circle3.png' onClick={() => this.clickToSection(this.section4ref.current)} data-menuanchor='section4'/>
-					<img className='circle-4' src='assets/images/circle4.png' onClick={() => this.clickToSection(this.section5ref.current)} data-menuanchor='section5'/>
-					<img className='circle-5' src='assets/images/circle5.png' onClick={() => this.clickToSection(this.section6ref.current)} data-menuanchor='section6'/>
-					<img className='circle-6' src='assets/images/circle6.png' onClick={() => this.clickToSection(this.section7ref.current)} data-menuanchor='section7'/>
-					<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section8ref.current)} data-menuanchor='section8'/>
+					<img className='circle-1' src='assets/images/circle1.png' onClick={() => this.clickToSection(this.section2ref.current)} data-menuanchor='section2' 
+					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/1.png')}
+					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle1.png')}/>
+					<img className='circle-2' src='assets/images/circle2.png' onClick={() => this.clickToSection(this.section3ref.current)} data-menuanchor='section3'
+					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/2.png')}
+					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle2.png')}/>
+					<img className='circle-3' src='assets/images/circle3.png' onClick={() => this.clickToSection(this.section4ref.current)} data-menuanchor='section4'
+					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/3.png')}
+					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle3.png')}/>
+					<img className='circle-4' src='assets/images/circle4.png' onClick={() => this.clickToSection(this.section5ref.current)} data-menuanchor='section5'
+					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/4.png')}
+					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle4.png')}/>
+					<img className='circle-5' src='assets/images/circle5.png' onClick={() => this.clickToSection(this.section6ref.current)} data-menuanchor='section6'
+					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/5.png')}
+					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle5.png')}/>
+					<img className='circle-6' src='assets/images/circle6.png' onClick={() => this.clickToSection(this.section7ref.current)} data-menuanchor='section7'
+					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/6.png')}
+					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle6.png')}/>
+					<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section8ref.current)} data-menuanchor='section8'
+					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/7.png')}
+					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle7.png')}/>
 					{/*<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section9ref.current)} data-menuanchor='section9'/>*/}
 				</div>
 				<div id='mouse' onClick={() => this.clickToSection(this.section1ref.current)} style={{display: !this.state.showmenu ? 'block' : 'none' }}>
 					 {/*<img className='mouse-icon' src='assets/images/mouse.png'/>*/}
-					 <img className='top-icon' src='assets/images/backtotop.png'/>
+					 <img className={classnames("top-icon", {
+          "top-icon--hidden": this.state.visible
+        })} src='assets/images/backtotop.png'/>
 				</div>
 			</div>
 			</div> 
@@ -213,9 +243,13 @@ class App extends Component {
 				<CopyText  wait={1000} headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
 				
 				<Slideshow content={data} cycleSpeed={3000} />
-			
-				
-				
+
+				<div className={classnames("scroll-icon-container", {
+          "scroll-icon-container--hidden": !this.state.visible
+        })}>
+				{/*<img  src='assets/images/scroll-down-bounce.gif'/>*/}
+				<img  src='assets/images/scroll-the-facts.png'/>
+				</div>
 				{/*<img src={Marvel} />*/}
 			
 			</div>

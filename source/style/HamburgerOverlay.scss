@@ -41,7 +41,7 @@
 }
 .hamburger-list-container::before {
   content: '';
-    width: 2px;
+    width: 1px;
     height: 75%;
     background-color: #b3b3b3;
     position: fixed;
@@ -54,6 +54,7 @@ ul {
   margin: 0;
   line-height: 2.2;
   padding-top: 120px;
+  cursor:pointer;
 
 }
 .hamburger-icon, .overlay-close-icon{

@@ -69,10 +69,36 @@ a {
    /*scroll-snap-align: start;*/
 }
 
-
-.top-icon{
-  padding-top: 40px;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+.scroll-icon-container{
+  display:table-cell; 
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  text-align:center;
+  padding-bottom: 30px;
+  vertical-align:bottom; 
+  opacity: 1;
+  animation: fade-in ease 3s;
+}
+
+
+
+.scroll-icon-container--hidden{
+  top: -50px;
+}
+
+
+/*.top-icon{
+  padding-top: 40px;
+}*/
 .red-logo {
     position: fixed;
     top: 56px;

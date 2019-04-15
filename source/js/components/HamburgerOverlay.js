@@ -40,11 +40,11 @@ const HamburgerOverlay = ({ handleClose, handleClose2, handleClose3, handleClose
       <li href="/" onClick={handleClose} >Home</li>
       <li href="/work" onClick={handleClose2}>Latest Work</li>
       <li href="/velvet" onClick={() => {
-							window.location.href = 'https://www.velvet.tech'
+							window.location.href = 'https://vimeo.com/313026654'
 						}}>Discover Velvet</li>
       <li href="/contact" onClick={handleClose4}>Contact Us</li>
       <li href="/careers" onClick={() => {
-							window.location.href = 'http://www.wearered.com'
+							window.location.href = 'http://www.wearered.com/careers'
 						}}>Careers</li>
     </ul>
     

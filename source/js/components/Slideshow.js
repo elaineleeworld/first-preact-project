@@ -128,6 +128,7 @@ class Slideshow extends Component {
             content={slide}
             current={this.isActive(i)}
             key={i}
+
           />
         )
       )
@@ -149,7 +150,7 @@ class Slideshow extends Component {
           ? displaySlides
           : (<h1> {error}</h1>)
         }
-    
+     
       </div>
     )
   }
