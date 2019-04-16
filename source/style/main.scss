@@ -14,6 +14,15 @@
 
 }
 
+html, body {
+  width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+   
+}
+
 /*html, body {
     height: 100%;
     overflow: hidden;
@@ -37,6 +46,7 @@ body {
  /* overflow-y: auto;
   overflow-x: hidden;*/
   
+overflow-x: hidden;
 
 
   -webkit-overflow-scrolling: touch;
@@ -111,7 +121,7 @@ a {
   padding-top: 340px;
   left: 70px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   font-size: 25px;
   font-family: 'SharpGroteskMedium25';
@@ -274,6 +284,7 @@ a {
     font-size: 15px;
     left: 66px;
     width: 65vw;
+    padding-top: 355px;
   }
  
 }
