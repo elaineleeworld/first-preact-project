@@ -110,7 +110,7 @@ a {
 .contact-us {
   height: 100%;
   position: absolute;
-  z-index: 10;  
+  z-index: 200;  
   padding-top: 340px;
   left: 70px;
   display: flex;
@@ -118,6 +118,7 @@ a {
   align-items: center;
   font-size: 25px;
   font-family: 'SharpGroteskMedium25';
+
 
 }
 .email{
