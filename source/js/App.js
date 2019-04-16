@@ -311,10 +311,10 @@ class App extends Component {
 			
 			<div className='contact' className='section' ref={this.section9ref} data-anchor='section9'>
 			 <CopyText wait={1000} headline="Give us a test project." subheadline="From developing ads to consulting on campaign tech, we're ready to help."/>
-				 {/*<div >
+				 <div className='contact-us'>
 					 
-					 <h3>newbiz@WeAreRED.com  <span>  |  310 399.4242</span> </h3>
-				  </div>*/}
+					 <h3 className='email'>newbiz@WeAreRED.com  <span className='phone'>  &nbsp;&nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;&nbsp;    310 399.4242</span> </h3>
+				  </div>
 				<Slideshow content={data9} cycleSpeed={3000} />
 			</div>
 			

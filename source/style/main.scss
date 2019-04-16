@@ -89,6 +89,25 @@ a {
   animation: fade-in ease 3s;
 }
 
+.contact-us {
+  height: 100%;
+    position: absolute;
+    z-index: 10;  
+    margin-top: 160px;
+    left: 70px;
+     display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-family: 'SharpGroteskMedium25';
+}
+.email{
+  color: red;
+}
+.phone{
+  color:white;
+}
+
 .partner-logos{
  position:absolute;
  z-index: 10;
