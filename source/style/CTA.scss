@@ -1,11 +1,8 @@
 .CTA {
-  /*position: relative;
   z-index: 200;
-  left: 70px;
-  bottom: 200px; */
   display:table-cell; 
   position: absolute;
-  bottom: 200px;
+  bottom: 160px;
   left: 70px;
   width:100%;
   text-align:center;
@@ -31,30 +28,43 @@
   width: 200px;
   line-height: 30px;
 	font-size: 15px;
+  bottom: 120px;
   /*padding: 10px;*/
-
-	
-	
 }
 }
-/*@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px){
 	.CTA{
 	left: 60px;
-	bottom: 220px;
+	bottom: 150px;
 	font-size: 10px;
-	height:20px;
-	line-height: 20px;
+	height:11px;
+  line-height: 26px;
   width: 125px;
-	
-	
-}*/
-/*@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-   iPhone, Android rules here 
+}
+}
+
+@media only screen and (device-width: 768px) and (orientation: landscape) {
+  /* rules for iPad in landscape orientation */
   .CTA {
-    bottom: 130px;
-    font-size: 10px;
-	height:20px;
-	line-height: 20px;
+    bottom: 400px;
+  }
+  
+}
+
+@media only screen and (device-width: 1024px) and (orientation: portrait) {
+  /* rules for iPad in portrait orientation */
+  .CTA{
+    bottom: 400px;
+  }
+  
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+   /*iPhone, Android rules here */
+  .CTA {
+  bottom: 120px;
+  font-size: 10px;
+	height:11px;
+	line-height: 26px;
   width: 125px;
-}*/
-/*}*/
+}
+}

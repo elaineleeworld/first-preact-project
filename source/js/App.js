@@ -143,10 +143,7 @@ class App extends Component {
 			{showmenu: false,
 				}
 			);
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		})
+		window.scrollTo(0,document.body.scrollTop);
 		document.documentElement.style.overflow = 'scroll';
 		// document.getElementById('hamburger-overlay-container').style.display='none';
 		// document.documentElement.style.display = 'none';
@@ -158,10 +155,7 @@ class App extends Component {
 			{showmenu: false,
 				}
 			);
-		window.scrollTo({
-			top: 5500,
-			behavior: 'smooth'
-		})
+		window.scrollTo(0,document.body.scrollHeight);
 		document.documentElement.style.overflow = 'scroll';
 		// document.getElementById('hamburger-overlay-container').style.display='none';
 		// document.documentElement.style.display = 'none';
@@ -272,7 +266,9 @@ class App extends Component {
 			 	<CopyText  wait={1000} headline="13x. That's how much faster we work." subheadline="We've developed in-house ad tech that creates dynamic campaigns, at scale, and much faster than conventional production methods. Including a product called Velvet - our favorite toy."/>
 				
 				<Slideshow content={data4} cycleSpeed={3000} />
-				<CTA  wait={1000} word='DISCOVER VELVET'/>
+				<CTA  wait={1000} word='DISCOVER VELVET' onClick={() => {
+							window.location.href = 'https://vimeo.com/313026654'
+						}}/>
 				</div>
 			</div>
 		
