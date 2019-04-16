@@ -1,12 +1,12 @@
 {
 	"slides":[
-	  {"id":"0","url":"assets/images/intro_1_marvel.png"},
-	  {"id":"1","url":"assets/images/intro_2_UA.png"},
-	  {"id":"2","url":"assets/images/intro_3_vans.png"},
-	  {"id":"3","url":"assets/images/intro_4_hulu.png"},
-	  {"id":"4","url":"assets/images/intro_5_riot.png"},
-	  {"id":"5","url":"assets/images/intro_6_disney.png"},
-	  {"id":"6","url":"assets/images/intro_7_espn.png"}
+	  {"id":"0","title":"Netflix/Marvel","url":"assets/images/intro_1_marvel.jpg"},
+	  {"id":"1","title":"UnderArmour","url":"assets/images/intro_2_UA.jpg"},
+	  {"id":"2","title":"Vans","url":"assets/images/intro_3_vans.jpg"},
+	  {"id":"3","title":"Hulu","url":"assets/images/intro_4_hulu.jpg"},
+	  {"id":"4","title":"Riot","url":"assets/images/intro_5_riot.jpg"},
+	  {"id":"5","title":"Disney","url":"assets/images/intro_6_disney.jpg"},
+	  {"id":"6","title":"ESPN","url":"assets/images/intro_7_espn.jpg"}
 	]
 }
 

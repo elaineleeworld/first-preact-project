@@ -15,7 +15,6 @@ import Delay from 'react-delay-render';
 import classnames from "classnames";
 
 
-// import Marvel from '../assets/images/netflix-marvel-text.png'
 var data = require('./data/Hero.json')
 var data2 = require('./data/Section_1.json')
 var data3 = require('./data/Section_2.json')
@@ -260,7 +259,9 @@ class App extends Component {
 				{/*<img  src='assets/images/scroll-down-bounce.gif'/>*/}
 				<img  src='assets/images/scroll-the-facts.png'/>
 				</div>
-				{/*<img src={Marvel} />*/}
+				{/*<div className='slide-attribution'>
+				<img src='assets/images/netflix-marvel-text.png' />
+				</div>*/}
 			
 			</div>
 			
@@ -268,6 +269,7 @@ class App extends Component {
 				<CopyText className='fade-in' wait={1000} headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owning the banner game." />
 
 				<Slideshow content={data2} cycleSpeed={3000} />
+				
 			</div>
 				
 			<div className='section' ref={this.section3ref} data-anchor='section3'>
