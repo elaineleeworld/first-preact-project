@@ -93,7 +93,7 @@ a {
   height: 100%;
     position: absolute;
     z-index: 10;  
-    margin-top: 160px;
+   padding-top: 340px;
     left: 70px;
      display: flex;
   justify-content: center;
@@ -219,6 +219,9 @@ a {
     min-width: 700px ;
     /*width: 100vw;*/
   }
+  .contact-us{
+    font-size: 19px;
+  }
   
 }
 
@@ -242,6 +245,10 @@ a {
     zoom: 0.5;
     margin-left: 120px;
     margin-top: -300px;
+  }
+  .contact-us{
+    font-size: 15px;
+    left: 60px;
   }
  
 }
