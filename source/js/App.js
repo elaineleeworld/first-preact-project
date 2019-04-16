@@ -39,7 +39,8 @@ class App extends Component {
 			show: false,
 			showmenu: false,
 			prevScrollpos: window.pageYOffset,
-      		visible: true
+      		visible: true,
+      		circleIn: false
 		}
 		// this.heroRef = createRef();
 		this.section1ref = createRef();
@@ -69,17 +70,22 @@ class App extends Component {
     const { prevScrollpos } = this.state;
 
     const currentScrollPos = window.pageYOffset;
+    const visibleSection = Math.floor(currentScrollPos / window.innerHeight)
     const visible = prevScrollpos > currentScrollPos;
 
     this.setState({
       prevScrollpos: currentScrollPos,
+      visibleSection,
       visible
     });
   };
 
+
 	clickHamburger = () => {
 		console.log('HAMBURGER CLICKED!')
-		this.setState({ isOpened: !this.state.isOpened})
+		this.setState({ 
+			isOpened: !this.state.isOpened
+		})
 		//shows X
 
 
@@ -90,6 +96,13 @@ class App extends Component {
 
 
 	};
+	// getCurrentRefimage = (currentRef) =>{
+	// 	console.log('GETTING IMAGE')
+	// 	if(currentRef){
+	// 		<img src= 'assets/images/2.png' />
+	// 		console.log('CURRENT REF IMAGE',currentRef)
+	// 	}
+	// };
 
 	clickToSection = (currentRef) => {
 		console.log('CLICKED TO SECTION!')
@@ -98,6 +111,7 @@ class App extends Component {
 				}
 			);
 		if(currentRef){
+			// this.getCurrentRefimage(currentRef);
             currentRef.scrollIntoView({ 
                behavior: "smooth", 
                block: "start"
@@ -162,9 +176,33 @@ class App extends Component {
  		document.body.scroll = "yes";
 	}
 
-	
+	setCircleIn = (circleState) => {
+		console.log('circ:', circleState)
+		this.setState({
+			circleIn: circleState
+		})
+	}	
 	
 	render(props, states) {
+		const Circles = new Array(7).fill(1).map((_, i) => {
+			const { circleIn, visibleSection } = this.state
+			const circNum = i + 1
+			const sectionNum = circNum + 1
+			const src = visibleSection === circNum || circleIn === circNum
+				? `assets/images/${circNum}.png`
+				: `assets/images/circle${circNum}.png`
+
+			return (
+				<img
+					className={`circle-${circNum}`}
+					src={src}
+					onClick={() => this.clickToSection(this[`section${sectionNum}ref`].current)}
+					data-menuanchor={`section${sectionNum}`}
+					onMouseEnter={() => this.setCircleIn(circNum)}
+					onMouseOut={() => this.setCircleIn(null)}
+				/>
+			)
+		})
 		
 		return (
 			<div id='app'>
@@ -195,29 +233,7 @@ class App extends Component {
 			<div className="sidebar-container" >
 				
 				<div className='circles' >
-					{/*<img className='circle-1' src='assets/images/circle1.png' onClick={() => this.clickToSection(this.section1ref.current)} data-menuanchor='section1'/>*/}
-					<img className='circle-1' src='assets/images/circle1.png' onClick={() => this.clickToSection(this.section2ref.current)} data-menuanchor='section2' 
-					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/1.png')}
-					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle1.png')}/>
-					<img className='circle-2' src='assets/images/circle2.png' onClick={() => this.clickToSection(this.section3ref.current)} data-menuanchor='section3'
-					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/2.png')}
-					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle2.png')}/>
-					<img className='circle-3' src='assets/images/circle3.png' onClick={() => this.clickToSection(this.section4ref.current)} data-menuanchor='section4'
-					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/3.png')}
-					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle3.png')}/>
-					<img className='circle-4' src='assets/images/circle4.png' onClick={() => this.clickToSection(this.section5ref.current)} data-menuanchor='section5'
-					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/4.png')}
-					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle4.png')}/>
-					<img className='circle-5' src='assets/images/circle5.png' onClick={() => this.clickToSection(this.section6ref.current)} data-menuanchor='section6'
-					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/5.png')}
-					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle5.png')}/>
-					<img className='circle-6' src='assets/images/circle6.png' onClick={() => this.clickToSection(this.section7ref.current)} data-menuanchor='section7'
-					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/6.png')}
-					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle6.png')}/>
-					<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section8ref.current)} data-menuanchor='section8'
-					onMouseEnter={(e) => (e.currentTarget.src = 'assets/images/7.png')}
-					onMouseOut={(e) => (e.currentTarget.src = 'assets/images/circle7.png')}/>
-					{/*<img className='circle-7' src='assets/images/circle7.png' onClick={() => this.clickToSection(this.section9ref.current)} data-menuanchor='section9'/>*/}
+					{Circles}
 				</div>
 				<div id='mouse' onClick={() => this.clickToSection(this.section1ref.current)} style={{display: !this.state.showmenu ? 'block' : 'none' }}>
 					 {/*<img className='mouse-icon' src='assets/images/mouse.png'/>*/}
