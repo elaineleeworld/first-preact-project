@@ -39,7 +39,8 @@ class App extends Component {
 			showmenu: false,
 			prevScrollpos: window.pageYOffset,
       		visible: true,
-      		circleIn: false
+      		circleIn: false,
+      		show2: false
 		}
 		// this.heroRef = createRef();
 		this.section1ref = createRef();
@@ -127,11 +128,32 @@ class App extends Component {
 		document.documentElement.style.overflow = 'hidden';
    		document.body.scroll = "no";
 
+	};	
+
+	showModal2 = () => {
+		console.log('SHOW MODAL')
+		this.setState(
+			{show2: true, 
+			}
+			);
+		document.documentElement.style.overflow = 'hidden';
+   		document.body.scroll = "no";
+
 	};
 	hideModal = () => {
 		console.log('HIDE MODAL')
 		this.setState(
 			{show: false,
+				}
+			);
+		document.documentElement.style.overflow = 'scroll';
+ 		document.body.scroll = "yes";
+
+	};
+	hideModal2 = () => {
+		console.log('HIDE MODAL')
+		this.setState(
+			{show2: false,
 				}
 			);
 		document.documentElement.style.overflow = 'scroll';
@@ -212,12 +234,13 @@ class App extends Component {
 			 handleClose4={this.moveToContact}
 			 />
 
-			<Modal show={this.state.show} handleClose={this.hideModal} > 
-		       
- 			<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width='100%'
-          height='100%' playing={this.state.show}/>
 		
-	        </Modal> 
+			
+		       
+ 		{/*<ReactPlayer url='https://vimeo.com/313026654' width='100%'
+          height='100%' playing={this.state.show}/>*/}
+		
+	
 			
 			<img className='red-logo' src='assets/images/REDproduction.png'/>
 
@@ -235,7 +258,7 @@ class App extends Component {
 					{Circles}
 				</div>
 				<div id='mouse' onClick={() => this.clickToSection(this.section1ref.current)} style={{display: !this.state.showmenu ? 'block' : 'none' }}>
-					 {/*<img className='mouse-icon' src='assets/images/mouse.png'/>*/}
+				
 					 <img className={classnames("top-icon", {
           "top-icon--hidden": this.state.visible
         })} src='assets/images/backtotop.png'/>
@@ -256,12 +279,10 @@ class App extends Component {
 				<div className={classnames("scroll-icon-container", {
           "scroll-icon-container--hidden": !this.state.visible
         })}>
-				{/*<img  src='assets/images/scroll-down-bounce.gif'/>*/}
+			
 				<img  src='assets/images/scroll-the-facts.png'/>
 				</div>
-				{/*<div className='slide-attribution'>
-				<img src='assets/images/netflix-marvel-text.png' />
-				</div>*/}
+				
 			
 			</div>
 			
@@ -269,7 +290,7 @@ class App extends Component {
 				<CopyText className='fade-in' wait={1000} headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owning the banner game." />
 
 				<Slideshow content={data2} cycleSpeed={3000} />
-				
+
 			</div>
 				
 			<div className='section' ref={this.section3ref} data-anchor='section3'>
@@ -284,9 +305,8 @@ class App extends Component {
 			 	<CopyText  wait={1000} headline="13x. That's how much faster we work." subheadline="We've developed in-house ad tech that creates dynamic campaigns, at scale, and much faster than conventional production methods. Including a product called Velvet - our favorite toy."/>
 				
 				<Slideshow content={data4} cycleSpeed={3000} />
-				<CTA  wait={1000} word='DISCOVER VELVET' onClick={() => {
-							window.location.href = 'https://vimeo.com/313026654'
-						}}/>
+				<CTA  wait={1000} word='DISCOVER VELVET' onClick={this.showModal}/>
+					<Modal show={this.state.show} url='https://vimeo.com/313026654' handleClose={this.hideModal} /> 
 				</div>
 			</div>
 		
@@ -319,7 +339,11 @@ class App extends Component {
 				
 		
 				<Slideshow content={data8} cycleSpeed={3000} />
-				<CTA  wait={1000} word='LATEST WORK' onClick={this.showModal} />
+				<CTA  wait={1000} word='LATEST WORK' onClick={() => {
+							window.location.href = 'http://sizzle.wearered.com'
+						}}/>
+				{/*<CTA  wait={1000} word='LATEST WORK' onClick={this.showModal2} />
+				<Modal show={this.state.show2} url='https://www.youtube.com/watch?v=sNJUzwBNbxo' handleClose={this.hideModal2} /> */}
 				</div>
 			</div>
 			
@@ -327,7 +351,7 @@ class App extends Component {
 			 <CopyText wait={1000} headline="Give us a test project." subheadline="From developing ads to consulting on campaign tech, we're ready to help."/>
 				 <div className='contact-us'>
 					 
-					 <h3 className='email'>newbiz@WeAreRED.com  <span className='phone'>  &nbsp;&nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;&nbsp;    310 399.4242</span> </h3>
+					<a className='email' target="_blank" href="mailto:newbiz@WeAreRED.com?subject = I want to learn more about RED Production!&body = Contact me!">newbiz@WeAreRED.com</a>  <span className='phone'>  &nbsp;&nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;&nbsp;    310 399.4242</span> 
 				  </div>
 				<Slideshow content={data9} cycleSpeed={3000} />
 			</div>

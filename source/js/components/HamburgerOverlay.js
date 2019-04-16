@@ -1,8 +1,8 @@
 import { h, render, Component } from 'preact'
-import ReactPlayer from 'react-player'
 import {Router} from 'preact-router';
 import { Link, Match } from 'preact-router/match';
 import Slideshow from'./Slideshow'
+import Modal from './Modal'
 
 import ReactDelayRender from 'react-delay-render';
 import Delay from 'react-delay-render';
@@ -27,21 +27,12 @@ const HamburgerOverlay = ({ handleClose, handleClose2, handleClose3, handleClose
 				<div className='hamburger-list-container'>
 					<div className='overlay-divider-line'>
 					{children}
-					{/*<Router>
-						<Slideshow path='/'/>*/}
-						{/*<Work path='/latest-work'/>*/}
-						{/*<Velvet path='/discover-velvet'/>*/}
-						{/*<Contact path='/contact'/>*/}
-						{/*<Careers path='/careers'/>*/}
-					{/*</Router>*/}
-					 
-   
+
         		<ul>
       <li href="/" onClick={handleClose} >Home</li>
       <li href="/work" onClick={handleClose2}>Latest Work</li>
-      <li href="/velvet" onClick={() => {
-							window.location.href = 'https://vimeo.com/313026654'
-						}}>Discover Velvet</li>
+      <li href="/velvet" onClick={handleClose2}>Discover Velvet</li>
+
       <li href="/contact" onClick={handleClose4}>Contact Us</li>
     {/*  <li href="/careers" onClick={() => {
 							window.location.href = 'http://www.wearered.com/careers'
