@@ -272,7 +272,7 @@ class App extends Component {
 				
 			<div className='section' ref={this.section3ref} data-anchor='section3'>
 
-				<CopyText  wait={1000} headline="0.5 seconds is the average time spend on a social ad. We've got that beat." subheadline="Our mission: stop the scroll. Whether they're planned weeks in advance or built on the fly, our social ads stand out in a feed."/>
+				<CopyText  wait={1000} headline="0.5 seconds is the average time spent on a social ad. We've got that beat." subheadline="Our mission: stop the scroll. Whether they're planned weeks in advance or built on the fly, our social ads stand out in a feed."/>
 				
 				<Slideshow content={data3} cycleSpeed={3000} />
 			</div>
@@ -295,7 +295,7 @@ class App extends Component {
 			</div>
 			
 			<div className='section' ref={this.section6ref} data-anchor='section6'>
-			 	<CopyText  wait={1000} headline="6 partners consult with us about how to make their platforms work better." subheadline="You may have heard of them." />
+			 	<CopyText  wait={1000} headline="6 partners consult with us about how to make their platforms work better." subheadline="And we couldn't be prouder to work with them." />
 				
 				<Slideshow content={data6} cycleSpeed={3000} />
 				<div className='partner-logos'>

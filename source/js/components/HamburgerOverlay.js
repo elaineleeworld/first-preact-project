@@ -43,9 +43,9 @@ const HamburgerOverlay = ({ handleClose, handleClose2, handleClose3, handleClose
 							window.location.href = 'https://vimeo.com/313026654'
 						}}>Discover Velvet</li>
       <li href="/contact" onClick={handleClose4}>Contact Us</li>
-      <li href="/careers" onClick={() => {
+    {/*  <li href="/careers" onClick={() => {
 							window.location.href = 'http://www.wearered.com/careers'
-						}}>Careers</li>
+						}}>Careers</li>*/}
     </ul>
     
 		 <img className='overlay-close-icon' src='assets/images/X.png'
