@@ -351,8 +351,11 @@ class App extends Component {
 			 <CopyText wait={1000} headline="Give us a test project." subheadline="From developing ads to consulting on campaign tech, we're ready to help."/>
 				 <div className='contact-us'>
 					 
-					<a className='email' target="_blank" href="mailto:newbiz@WeAreRED.com">newbiz@WeAreRED.com</a>  <span className='phone'>  &nbsp;&nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;&nbsp;    310 399.4242</span> 
+					<a className='email' target="_blank" href="mailto:newbiz@WeAreRED.com">newbiz@WeAreRED.com</a> <span className='mobile-break'>&nbsp;&nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;&nbsp;</span>
+				   <div className='phone'> 310 399.4242</div> 
+
 				  </div>
+
 				<Slideshow content={data9} cycleSpeed={3000} />
 			</div>
 			

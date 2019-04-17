@@ -66,6 +66,11 @@ overflow-x: hidden;
   /*overflow-y: scroll;*/
 }
 
+.mobile-break {
+  display: block;
+  color:white;
+}
+
 
 a {
   padding-bottom: 2px;
@@ -124,9 +129,11 @@ a {
 .email{
   color: red;
   cursor: pointer;
+  display: inline-block;
 }
 .phone{
   color:white;
+  display:inline;
 }
 
 .partner-logos{
@@ -251,6 +258,15 @@ a {
   }
   .contact-us{
     font-size: 19px;
+
+  }
+  .mobile-break {
+    display: none;
+  }
+  .phone{
+    display:block;
+    position: absolute;
+    padding-top: 100px;
   }
   
 }
@@ -282,6 +298,7 @@ a {
     width: 65vw;
     padding-top: 355px;
   }
+
  
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -290,13 +307,15 @@ a {
     height: 100%;
     margin: 0;
     padding: 0;
-    
-   
+  
 }
   /* iPhone, Android rules here */
  .slideshow__container{
     min-width: 320px;
     /*width: 100vw;*/
+  }
+  .mobile-break {
+    display: none;
   }
   }
 
