@@ -3,20 +3,11 @@ import { h, render, Component } from 'preact'
 import classNames from 'classNames'
 
 
-
-//create a JSON file with id, headline, subheadline, url for image, 
-//create a CarouselWrapper component - wrapper for entire layout and logic
-//create an ImageSlide component - current, image shown
-
-
 /** @jsx h */
 
 const classnames = classNames
 const Slide = ({ content, current }) => {
-	// const styles = {
-	//     backgroundSize: 'cover',
-	//     backgroundPosition: 'center'
-	//   };
+	
   const classes = classnames({'slide': true,'active': current});
   console.log('CLASSES', classes)
   return (

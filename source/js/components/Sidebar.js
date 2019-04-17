@@ -5,18 +5,9 @@ import '../../style/Sidebar.scss'
 class Sidebar extends Component {
 	constructor(props){
 		super(props);
-		// this.clickToSection1 = this.clickToSection1.bind(this);
+		
 	}
 
-	// clickToSection1 = () => {
-	// 	console.log('CLICKED!')
-	// 	if(this.section1ref.current){
- //            this.section1ref.current.scrollIntoView({ 
- //               behavior: "smooth", 
- //               block: "nearest"
- //            })
- //        }
-	// }
 	render(){
 		return(
 			<div className="sidebar-container">
