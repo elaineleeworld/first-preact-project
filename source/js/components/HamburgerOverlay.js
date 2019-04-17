@@ -30,7 +30,9 @@ const HamburgerOverlay = ({ handleClose, handleClose2, handleClose3, handleClose
 
         		<ul>
       <li href="/" onClick={handleClose} >Home</li>
-      <li href="/work" onClick={handleClose2}>Latest Work</li>
+      <li href="/work" onClick={() => {
+							window.location.href = 'http://sizzle.wearered.com'
+						}}>Latest Work</li>
       <li href="/velvet" onClick={handleClose2}>Discover Velvet</li>
 
       <li href="/contact" onClick={handleClose4}>Contact Us</li>
