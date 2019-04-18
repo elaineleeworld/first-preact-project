@@ -45,7 +45,7 @@ class App extends Component {
           width: window.innerWidth,
           
 		}
-		// this.heroRef = createRef();
+		
 		this.section1ref = createRef();
 		this.section2ref = createRef();
 		this.section3ref = createRef();
@@ -55,8 +55,8 @@ class App extends Component {
 		this.section7ref = createRef();
 		this.section8ref = createRef();
 		this.section9ref = createRef();
-		// this.lastSectionref = createRef();
-		this.clickHamburger = this.clickHamburger.bind(this);
+		
+		// this.clickHamburger = this.clickHamburger.bind(this);
 		;
 	
 
