@@ -1,0 +1,14 @@
+{
+	"slides":[
+	  {"id":"0","url":"assets/images/intro_1_marvel_mobile.jpg"},
+	   {"id":"1","url":"assets/images/intro_2_UA_mobile.jpg"},
+	  {"id":"2","url":"assets/images/intro_3_vans_mobile.jpg"},
+	  {"id":"3","url":"assets/images/intro_4_hulu_mobile.jpg"},
+	  {"id":"4","url":"assets/images/intro_5_riot_mobile.jpg"},
+	  {"id":"5","url":"assets/images/intro_6_disney_mobile.jpg"},
+	  {"id":"6","url":"assets/images/intro_7_espn_mobile.jpg"}
+	]
+}
+
+
+

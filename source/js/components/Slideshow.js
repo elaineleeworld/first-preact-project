@@ -9,7 +9,7 @@ const classnames = classNames
 const Slide = ({ content, current }) => {
 	
   const classes = classnames({'slide': true,'active': current});
-  console.log('CLASSES', classes)
+  // console.log('CLASSES', classes)
   return (
 
     <div className= {classes} >

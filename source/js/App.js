@@ -16,6 +16,7 @@ import classnames from "classnames";
 
 
 var data = require('./data/Hero.json')
+var dataMobile = require('./data/Hero_Mobile.json')
 var data2 = require('./data/Section_1.json')
 var data3 = require('./data/Section_2.json')
 var data4 = require('./data/Section_3.json')
@@ -40,7 +41,9 @@ class App extends Component {
 			prevScrollpos: window.pageYOffset,
       		visible: true,
       		circleIn: false,
-      		show2: false
+      		show2: false,
+          width: window.innerWidth,
+          
 		}
 		// this.heroRef = createRef();
 		this.section1ref = createRef();
@@ -60,12 +63,25 @@ class App extends Component {
 	};
 	componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('resize', this.handleWindowSizeChange);
+   
   };
 
   // Remove the event listener when the component is unmount.
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener('resize', this.handleWindowSizeChange);
   };
+
+  handleWindowSizeChange = () => {
+  this.setState({ width: window.innerWidth});
+
+    console.log('resize', window.innerWidth)
+  
+    // this.forceUpdate();
+    // this.setState(this.state);
+  
+};
    handleScroll = () => {
     const { prevScrollpos } = this.state;
 
@@ -96,13 +112,7 @@ class App extends Component {
 
 
 	};
-	// getCurrentRefimage = (currentRef) =>{
-	// 	console.log('GETTING IMAGE')
-	// 	if(currentRef){
-	// 		<img src= 'assets/images/2.png' />
-	// 		console.log('CURRENT REF IMAGE',currentRef)
-	// 	}
-	// };
+
 
 	clickToSection = (currentRef) => {
 		console.log('CLICKED TO SECTION!')
@@ -111,7 +121,6 @@ class App extends Component {
 				}
 			);
 		if(currentRef){
-			// this.getCurrentRefimage(currentRef);
             currentRef.scrollIntoView({ 
                behavior: "smooth", 
                block: "start"
@@ -167,9 +176,7 @@ class App extends Component {
 			}
 			);
 		document.documentElement.style.overflow = 'hidden';
-		// document.getElementById('hamburger-overlay-container').style.display='block';
-		// document.documentElement.style.display = 'block';
-   		document.body.scroll = "no";
+   	document.body.scroll = "no";
 
 	};
 	hideOverlay = () => {
@@ -180,8 +187,6 @@ class App extends Component {
 			);
 		window.scrollTo(0,document.body.scrollTop);
 		document.documentElement.style.overflow = 'scroll';
-		// document.getElementById('hamburger-overlay-container').style.display='none';
-		// document.documentElement.style.display = 'none';
  		document.body.scroll = "yes";
 	}
 	moveToContact = () => {
@@ -192,8 +197,6 @@ class App extends Component {
 			);
 		window.scrollTo(0,document.body.scrollHeight);
 		document.documentElement.style.overflow = 'scroll';
-		// document.getElementById('hamburger-overlay-container').style.display='none';
-		// document.documentElement.style.display = 'none';
  		document.body.scroll = "yes";
 	}
 
@@ -205,6 +208,9 @@ class App extends Component {
 	}	
 	
 	render(props, states) {
+
+    
+
 		const Circles = new Array(7).fill(1).map((_, i) => {
 			const { circleIn, visibleSection } = this.state
 			const circNum = i + 1
@@ -212,6 +218,7 @@ class App extends Component {
 			const src = visibleSection === circNum || circleIn === circNum
 				? `assets/images/${circNum}.png`
 				: `assets/images/circle${circNum}.png`
+
 
 			return (
 				<img
@@ -224,6 +231,11 @@ class App extends Component {
 				/>
 			)
 		})
+
+    const { width } = this.state;
+    const isMobile = width <= 700;
+    // const {isMobile} = this.state;
+     
 		
 		return (
 			<div id='app'>
@@ -234,14 +246,6 @@ class App extends Component {
 			 handleClose4={this.moveToContact}
 			 />
 
-		
-			
-		       
- 		{/*<ReactPlayer url='https://vimeo.com/313026654' width='100%'
-          height='100%' playing={this.state.show}/>*/}
-		
-	
-			
 			<img className='red-logo' src='assets/images/REDproduction.png'/>
 
 			
@@ -270,21 +274,22 @@ class App extends Component {
 
      		<div className='content-container'>
      		
-			<div className='home' className='section' ref={this.section1ref} data-anchor='section1'>
-			
-				<CopyText  wait={1000} headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
-				
-				<Slideshow content={data} cycleSpeed={3000} />
-
-				<div className={classnames("scroll-icon-container", {
+		  <div className='home' className='section' ref={this.section1ref} data-anchor='section1'>
+      
+        <CopyText  wait={1000} headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
+        
+    
+       {isMobile ? <Slideshow content={dataMobile} cycleSpeed={3000} /> : <Slideshow content={data} cycleSpeed={3000} />}
+       {console.log('ISMOBILE', isMobile)}
+        <div className={classnames("scroll-icon-container", {
           "scroll-icon-container--hidden": !this.state.visible
         })}>
-			
-				<img  src='assets/images/scroll-the-facts.png'/>
-				</div>
-				
-			
-			</div>
+      
+        <img  src='assets/images/scroll-the-facts.png'/>
+        </div>
+        
+      
+      </div>
 			
 			<div className='section' ref={this.section2ref} data-anchor='section2'>
 				<CopyText className='fade-in' wait={1000} headline='20 years at the forefront of digital advertising' subheadline="In 1999, while people were still using dial-up to surf the Net, we were owning the banner game." />
@@ -363,8 +368,9 @@ class App extends Component {
 			</div>
 			</div>
 )
+} 
 }
-}
+
 	
 export default Delay({ delay: 200, onRender: render })(App)
 

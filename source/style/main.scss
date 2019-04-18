@@ -242,8 +242,8 @@ a {
   }
   .partner-logos{
     zoom: 0.8;
-
     margin-left: 90px;
+
    
   
   }
@@ -288,9 +288,9 @@ a {
     zoom: 0.7;
   }
   .partner-logos {
-    zoom: 0.5;
-    margin-left: 120px;
-    margin-top: -300px;
+    zoom: 0.4;
+    margin-left: 160px;
+    margin-top: -400px;
   }
   .contact-us{
     font-size: 15px;
@@ -301,6 +301,23 @@ a {
 
  
 }
+
+@media only screen and (device-width: 768px) and (orientation: landscape) {
+  /* rules for iPad in landscape orientation */
+  .partner-logos {
+    margin-top: -550px;
+  }
+  
+}
+
+@media only screen and (device-width: 1024px) and (orientation: portrait) {
+  /* rules for iPad in portrait orientation */
+  .partner-logos{
+    margin-top: -550px;
+  }
+  
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   html, body {
   width: 100%;
@@ -316,6 +333,9 @@ a {
   }
   .mobile-break {
     display: none;
+  }
+  .partner-logos{
+    margin-top: -300px;
   }
   }
 
