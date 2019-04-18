@@ -6,11 +6,11 @@ import Sidebar from './components/Sidebar'
 import HamburgerOverlay from './components/HamburgerOverlay'
 import CopyText from './components/CopyText'
 import React from 'preact-compat';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import ReactPlayer from 'react-player'
 // import { Controller, Scene } from 'react-scrollmagic';
 // var scrollIntoView = require('scroll-into-view');
-import ReactFullpage from '@fullpage/react-fullpage';
+// import ReactFullpage from '@fullpage/react-fullpage';
 import Delay from 'react-delay-render';
 import classnames from "classnames";
 
@@ -139,16 +139,16 @@ class App extends Component {
 
 	};	
 
-	showModal2 = () => {
-		console.log('SHOW MODAL')
-		this.setState(
-			{show2: true, 
-			}
-			);
-		document.documentElement.style.overflow = 'hidden';
-   		document.body.scroll = "no";
+	// showModal2 = () => {
+	// 	console.log('SHOW MODAL')
+	// 	this.setState(
+	// 		{show2: true, 
+	// 		}
+	// 		);
+	// 	document.documentElement.style.overflow = 'hidden';
+ //   		document.body.scroll = "no";
 
-	};
+	// };
 	hideModal = () => {
 		console.log('HIDE MODAL')
 		this.setState(
@@ -159,16 +159,16 @@ class App extends Component {
  		document.body.scroll = "yes";
 
 	};
-	hideModal2 = () => {
-		console.log('HIDE MODAL')
-		this.setState(
-			{show2: false,
-				}
-			);
-		document.documentElement.style.overflow = 'scroll';
- 		document.body.scroll = "yes";
+	// hideModal2 = () => {
+	// 	console.log('HIDE MODAL')
+	// 	this.setState(
+	// 		{show2: false,
+	// 			}
+	// 		);
+	// 	document.documentElement.style.overflow = 'scroll';
+ // 		document.body.scroll = "yes";
 
-	};
+	// };
 	showOverlay = () => {
 		console.log('SHOW OVERLAY')
 		this.setState(
@@ -346,9 +346,7 @@ class App extends Component {
 				
 		
 				<Slideshow content={data8} cycleSpeed={3000} />
-				<CTA  wait={1000} word='LATEST WORK' onClick={() => {
-							window.location.href = 'http://sizzle.wearered.com'
-						}}/>
+				<CTA   wait={1000} word='LATEST WORK' onClick={() => window.open('http://sizzle.wearered.com', "_blank")}/>
 				{/*<CTA  wait={1000} word='LATEST WORK' onClick={this.showModal2} />
 				<Modal show={this.state.show2} url='https://www.youtube.com/watch?v=sNJUzwBNbxo' handleClose={this.hideModal2} /> */}
 				</div>
