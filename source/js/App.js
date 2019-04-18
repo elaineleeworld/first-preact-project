@@ -63,17 +63,17 @@ class App extends Component {
 	};
 	componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-    window.addEventListener('resize', this.handleWindowSizeChange);
+    window.addEventListener('resize', this.handleResize);
    
   };
 
   // Remove the event listener when the component is unmount.
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
-    window.removeEventListener('resize', this.handleWindowSizeChange);
+    window.removeEventListener('resize', null);
   };
 
-  handleWindowSizeChange = () => {
+  handleResize = () => {
   this.setState({ width: window.innerWidth});
 
     console.log('resize', window.innerWidth)
@@ -280,6 +280,8 @@ class App extends Component {
         
     
        {isMobile ? <Slideshow content={dataMobile} cycleSpeed={3000} /> : <Slideshow content={data} cycleSpeed={3000} />}
+      {/* <Slideshow style={{display: isMobile ? 'block' : 'none'}}content={dataMobile} cycleSpeed={3000} />
+       <Slideshow style={{display: !isMobile ? 'block' : 'none'}}  content={data} cycleSpeed={3000} />}*/}
        {console.log('ISMOBILE', isMobile)}
         <div className={classnames("scroll-icon-container", {
           "scroll-icon-container--hidden": !this.state.visible
