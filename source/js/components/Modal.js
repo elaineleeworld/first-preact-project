@@ -5,9 +5,11 @@ import ReactPlayer from 'react-player'
 import '../../style/Modal.scss'
 
 
+  
 
-const Modal = ({ handleClose, show, children, url }) => {
+const Modal = ({ handleClose, show, children, url, ref }) => {
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+
 
   return (
     <div className={showHideClassName}>
@@ -18,8 +20,8 @@ const Modal = ({ handleClose, show, children, url }) => {
         
         
         />
-          <ReactPlayer url={url} width='100%'
-          height='100%' playing={show}/>
+          <ReactPlayer ref={ref} url={url} width='100%'
+          height='100%' playing={show} />
       </section>
     </div>
   );

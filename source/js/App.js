@@ -43,6 +43,7 @@ class App extends Component {
       		circleIn: false,
       		show2: false,
           width: window.innerWidth,
+          isVideoPaused: false
           
 		}
 		
@@ -55,7 +56,7 @@ class App extends Component {
 		this.section7ref = createRef();
 		this.section8ref = createRef();
 		this.section9ref = createRef();
-		
+		// this.ref = createRef();
 		// this.clickHamburger = this.clickHamburger.bind(this);
 		;
 	
@@ -65,14 +66,15 @@ class App extends Component {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener('resize', this.handleResize);
    
-  };
+  }
 
   // Remove the event listener when the component is unmount.
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener('resize', null);
-  };
+  }
 
+ 
   handleResize = () => {
   this.setState({ width: window.innerWidth});
 
@@ -81,7 +83,7 @@ class App extends Component {
     // this.forceUpdate();
     // this.setState(this.state);
   
-};
+}
    handleScroll = () => {
     const { prevScrollpos } = this.state;
 
@@ -94,7 +96,7 @@ class App extends Component {
       visibleSection,
       visible
     });
-  };
+  }
 
 
 	clickHamburger = () => {
@@ -105,14 +107,13 @@ class App extends Component {
 		//shows X
 
 
-	};
+	}
 	closeOverlay = () => {
 		console.log('Overlay closed!')
 		this.setState({ isOpened: !this.state.isOpened})
 
 
-	};
-
+	}
 
 	clickToSection = (currentRef) => {
 		console.log('CLICKED TO SECTION!')
@@ -126,7 +127,7 @@ class App extends Component {
                block: "start"
             })
         }
-	};
+	}
 	
 	showModal = () => {
 		console.log('SHOW MODAL')
@@ -137,7 +138,7 @@ class App extends Component {
 		document.documentElement.style.overflow = 'hidden';
    		document.body.scroll = "no";
 
-	};	
+	}
 
 	// showModal2 = () => {
 	// 	console.log('SHOW MODAL')
@@ -149,16 +150,31 @@ class App extends Component {
  //   		document.body.scroll = "no";
 
 	// };
+  //  onVideoEnd = () =>  {
+  //   this.setState({ 
+  //     isVideoPaused: true }, 
+  //     () => this.player.seekTo(0))
+  // };
+  
 	hideModal = () => {
 		console.log('HIDE MODAL')
 		this.setState(
 			{show: false,
-				}
+      isVideoPaused: true
+				}, 
+        // () => 
+        // console.log("PLAYER", this.player.seekTo(0))
+        // () => console.log("this.state", this.state)
 			);
+    // this.setState({
+    //   show: false
+    // })
+    // this.player.seek(0);
+    // this.onVideoEnd();
 		document.documentElement.style.overflow = 'scroll';
  		document.body.scroll = "yes";
 
-	};
+	}
 	// hideModal2 = () => {
 	// 	console.log('HIDE MODAL')
 	// 	this.setState(
@@ -169,6 +185,8 @@ class App extends Component {
  // 		document.body.scroll = "yes";
 
 	// };
+
+
 	showOverlay = () => {
 		console.log('SHOW OVERLAY')
 		this.setState(
@@ -178,7 +196,7 @@ class App extends Component {
 		document.documentElement.style.overflow = 'hidden';
    	document.body.scroll = "no";
 
-	};
+	}
 	hideOverlay = () => {
 		console.log('HIDE OVERLAY')
 		this.setState(
@@ -206,6 +224,7 @@ class App extends Component {
 			circleIn: circleState
 		})
 	}	
+
 	
 	render(props, states) {
 
@@ -234,7 +253,11 @@ class App extends Component {
 
     const { width } = this.state;
     const isMobile = width <= 700;
+    const isDesktop = width > 700;
     // const {isMobile} = this.state;
+    // const ref = player => { this.player = player }
+
+   
      
 		
 		return (
@@ -278,8 +301,9 @@ class App extends Component {
       
         <CopyText  wait={1000} headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
         
-    
-       {isMobile ? <Slideshow content={dataMobile} cycleSpeed={3000} /> : <Slideshow content={data} cycleSpeed={3000} />}
+      {/*{isMobile && <Slideshow content={dataMobile} cycleSpeed={3000} />}*/}
+      {/*<Slideshow style={{ display: isMobile ? 'none' : 'block'}}content={data} cycleSpeed={3000} />*/}
+      {isMobile ? <Slideshow content={dataMobile} cycleSpeed={3000} /> : <div> <Slideshow content={data} cycleSpeed={3000} /></div>}
       {/* <Slideshow style={{display: isMobile ? 'block' : 'none'}}content={dataMobile} cycleSpeed={3000} />
        <Slideshow style={{display: !isMobile ? 'block' : 'none'}}  content={data} cycleSpeed={3000} />}*/}
        {console.log('ISMOBILE', isMobile)}
@@ -313,7 +337,7 @@ class App extends Component {
 				
 				<Slideshow content={data4} cycleSpeed={3000} />
 				<CTA  wait={1000} word='DISCOVER VELVET' onClick={this.showModal}/>
-					<Modal show={this.state.show} url='https://vimeo.com/313026654' handleClose={this.hideModal} /> 
+					<Modal ref={this.ref} show={this.state.show} url='https://vimeo.com/313026654' handleClose={this.hideModal} /> 
 				</div>
 			</div>
 		
