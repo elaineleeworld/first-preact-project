@@ -301,11 +301,9 @@ class App extends Component {
       
         <CopyText  wait={1000} headline='Ads with impact.' subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."/>
         
-      {/*{isMobile && <Slideshow content={dataMobile} cycleSpeed={3000} />}*/}
-      {/*<Slideshow style={{ display: isMobile ? 'none' : 'block'}}content={data} cycleSpeed={3000} />*/}
-      {isMobile ? <Slideshow content={dataMobile} cycleSpeed={3000} /> : <div> <Slideshow content={data} cycleSpeed={3000} /></div>}
-      {/* <Slideshow style={{display: isMobile ? 'block' : 'none'}}content={dataMobile} cycleSpeed={3000} />
-       <Slideshow style={{display: !isMobile ? 'block' : 'none'}}  content={data} cycleSpeed={3000} />}*/}
+   
+       {isMobile ? <Slideshow content={dataMobile} cycleSpeed={3000} /> : <div><Slideshow content={data} cycleSpeed={3000} /></div>}
+    
        {console.log('ISMOBILE', isMobile)}
         <div className={classnames("scroll-icon-container", {
           "scroll-icon-container--hidden": !this.state.visible
