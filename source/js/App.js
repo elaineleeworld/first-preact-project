@@ -253,7 +253,7 @@ class App extends Component {
 
     const { width } = this.state;
     const isMobile = width <= 700;
-    const isDesktop = width > 700;
+    // const isDesktop = width > 700;
     // const {isMobile} = this.state;
     // const ref = player => { this.player = player }
 
