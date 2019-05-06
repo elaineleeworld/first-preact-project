@@ -25,14 +25,22 @@
     right: 50px;
     top: 0;
 }*/
+
+/*#divider-line-wrapper{
+  display: table;
+  height: auto;
+}*/
 .divider-line{
-	content: '';
+	/*content: '';*/
     width: 1px;
     height: 85%;
     background-color: white;
     position: fixed;
     right: 90px;
-    top: 60px;
+    top: 8%;
+   /* display: table-cell;
+    vertical-align: middle;*/
+
     z-index: 10;
 }
 
@@ -49,7 +57,7 @@
   padding-bottom: 30px;
   vertical-align:bottom; 
   opacity: 1;
-  animation: fade-in ease 3s;
+ 
  
 }
 .top-icon--hidden{

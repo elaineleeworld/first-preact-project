@@ -3,6 +3,8 @@ import App from './App'
 
 import '../style/main.scss'
 
+// console.log(`${process.env.REACT_APP_NAME} ${process.env.REACT_APP_VERSION}`)
+
 const container = document.querySelector('#root')
 
 function renderApp() {

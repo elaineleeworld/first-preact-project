@@ -115,6 +115,9 @@ const config = {
 		]),
 		new webpack.NamedModulesPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
+		new webpack.DefinePlugin({
+      VERSION: JSON.stringify(require("./package.json").version)
+    }),
 		new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional

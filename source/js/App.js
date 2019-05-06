@@ -15,6 +15,12 @@ import Delay from 'react-delay-render';
 import classnames from "classnames";
 
 
+// import pkgJSON from '../../package.json';
+// const pkgJSON = require('../../package.json');
+// const pkgJSON = process.env.npm_package_version
+ console.log("VERSION", VERSION)
+
+
 var data = require('./data/Hero.json')
 var dataMobile = require('./data/Hero_Mobile.json')
 var data2 = require('./data/Section_1.json')
@@ -90,6 +96,7 @@ class App extends Component {
     const currentScrollPos = window.pageYOffset;
     const visibleSection = Math.floor(currentScrollPos / window.innerHeight)
     const visible = prevScrollpos > currentScrollPos;
+    console.log("current scroll pos", currentScrollPos)
 
     this.setState({
       prevScrollpos: currentScrollPos,
@@ -203,7 +210,7 @@ class App extends Component {
 			{showmenu: false,
 				}
 			);
-		window.scrollTo(0,document.body.scrollTop);
+		// window.scrollTo(0,document.body.scrollTop);
 		document.documentElement.style.overflow = 'scroll';
  		document.body.scroll = "yes";
 	}
@@ -277,18 +284,21 @@ class App extends Component {
 					 <img className='hamburger-icon' src='assets/images/hamburger.png' onClick={this.showOverlay}/>
 					 
 				</div> 
-
+			<div id='divider-line-wrapper'>
 			<div className='divider-line'  ></div>
+			</div>
 			<div className="sidebar-container" >
 				
 				<div className='circles' >
 					{Circles}
 				</div>
 				<div id='mouse' onClick={() => this.clickToSection(this.section1ref.current)} style={{display: !this.state.showmenu ? 'block' : 'none' }}>
-				
-					 <img className={classnames("top-icon", {
-          "top-icon--hidden": this.state.visible
-        })} src='assets/images/backtotop.png'/>
+			
+					{window.pageYOffset === 0 ? <img className="top-icon--hidden"
+        src='assets/images/backtotop.png'/> : <img className="top-icon"
+        src='assets/images/backtotop.png'/>}
+
+					
 				</div>
 			</div>
 			</div> 
@@ -309,7 +319,7 @@ class App extends Component {
           "scroll-icon-container--hidden": !this.state.visible
         })}>
       
-        <img  src='assets/images/scroll-the-facts.png'/>
+        <img  src='assets/images/scroll-the-facts.png' onClick={() => this.clickToSection(this.section2ref.current)}/>
         </div>
         
       
@@ -375,11 +385,11 @@ class App extends Component {
 			</div>
 			
 			<div className='contact' className='section' ref={this.section9ref} data-anchor='section9'>
-			 <CopyText wait={1000} headline="Give us a test project." subheadline="From developing ads to consulting on campaign tech, we're ready to help."/>
+			 <CopyText wait={1000} headline="Give us a test." subheadline="From developing ads and creating social content to consulting on campaign tech, we're ready to go."/>
 				 <div className='contact-us'>
 					 
 					<a className='email' target="_blank" href="mailto:newbiz@WeAreRED.com">newbiz@WeAreRED.com</a> <span className='mobile-break'>&nbsp;&nbsp;&nbsp;&nbsp;   | &nbsp;&nbsp;&nbsp;&nbsp;</span>
-				   <div className='phone'> 310 399.4242</div> 
+				   <div className='phone'> 310.399.4242</div> 
 
 				  </div>
 
