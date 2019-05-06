@@ -90,6 +90,10 @@ Triton will launch the Container with a random instance name. Joyent provides a 
 
 `triton instance tag set -w <instance_name> triton.cns.services=rap-app-dns`
 
+Verify that `rap-app-dns` has been added to the `dns_names` by running:
+
+`triton instance get <instance_name>`
+
 Now you can safely delete the previous instance, and rename the new one:
 
 `triton instance delete red-ad-production`
