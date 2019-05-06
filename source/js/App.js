@@ -96,7 +96,10 @@ class App extends Component {
     const currentScrollPos = window.pageYOffset;
     const visibleSection = Math.floor(currentScrollPos / window.innerHeight)
     const visible = prevScrollpos > currentScrollPos;
+    const nextSection = Math.floor(currentScrollPos + 683)
     console.log("current scroll pos", currentScrollPos)
+    
+    console.log("next scroll pos", nextSection)
 
     this.setState({
       prevScrollpos: currentScrollPos,
