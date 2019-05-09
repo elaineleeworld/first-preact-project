@@ -200,7 +200,7 @@ class App extends Component {
     });
   };
 
-  render(props, states) {
+  render(props, states, event) {
     const Circles = new Array(7).fill(1).map((_, i) => {
       const { circleIn, visibleSection } = this.state;
       const circNum = i + 1;
@@ -250,12 +250,22 @@ class App extends Component {
               onClick={() => this.clickToSection(this.section1ref.current)}
               style={{ display: !this.state.showmenu ? "block" : "none" }}
             >
-              {this.ref === this.section1ref.current ? (
-                <img className="top-icon" src="assets/images/backtotop.png" />
+             {/* { +window.fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0  ? (
+                <img className="top-icon--hidden" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
               ) : (
-                <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
+              <div>
+                <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
-              {console.log("section1ref", this.section1ref.current)}
+              {console.log("window pageYOffset", +window.fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0) }*/}
+
+              { window.location.href === "http://localhost:8000/#section1" || window.location.href === "http://localhost:8000/" ? (
+                <img className="top-icon--hidden" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
+              ) : (
+              <div>
+                <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
+              )}
+              
+              {console.log("window.location.href", window.location.href) }
             </div>
           </div>
         </div>
@@ -273,13 +283,15 @@ class App extends Component {
                       subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."
                     />
 
-                    {isMobile ? (
+                    {isMobile ? 
+                      <div>
                       <Slideshow content={dataMobile} cycleSpeed={3000} />
-                    ) : (
+                      </div>
+                     : 
                       <div>
                         <Slideshow content={data} cycleSpeed={3000} />
                       </div>
-                    )}
+                    }
 
                     {console.log("ISMOBILE", isMobile)}
                     <div
