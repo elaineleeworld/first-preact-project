@@ -7,18 +7,12 @@ import HamburgerOverlay from "./components/HamburgerOverlay";
 import CopyText from "./components/CopyText";
 import React from "preact-compat";
 import ReactDOM from "preact-compat";
-// import styled from 'styled-components';
 import ReactPlayer from "react-player";
-// import { Controller, Scene } from 'react-scrollmagic';
-// var scrollIntoView = require('scroll-into-view');
 import "fullpage.js/vendors/scrolloverflow";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Delay from "react-delay-render";
 import classnames from "classnames";
 
-// import pkgJSON from '../../package.json';
-// const pkgJSON = require('../../package.json');
-// const pkgJSON = process.env.npm_package_version
 console.log("VERSION", VERSION);
 
 var data = require("./data/Hero.json");
@@ -59,15 +53,13 @@ class App extends Component {
     this.section7ref = createRef();
     this.section8ref = createRef();
     this.section9ref = createRef();
-    // this.ref = createRef();
-    // this.clickHamburger = this.clickHamburger.bind(this);
+    
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("resize", this.handleResize);
   }
 
-  // Remove the event listener when the component is unmount.
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
     window.removeEventListener("resize", null);
@@ -76,7 +68,7 @@ class App extends Component {
   handleResize = () => {
     this.setState({ width: window.innerWidth });
 
-    console.log("resize", window.innerWidth);
+    // console.log("resize", window.innerWidth);
 
     // this.forceUpdate();
     // this.setState(this.state);
@@ -90,7 +82,7 @@ class App extends Component {
     const nextSection = Math.floor(currentScrollPos + 683);
     console.log("current scroll pos", currentScrollPos);
 
-    console.log("next scroll pos", nextSection);
+    // console.log("next scroll pos", nextSection);
 
     this.setState({
       prevScrollpos: currentScrollPos,
@@ -123,7 +115,7 @@ class App extends Component {
   };
 
   showModal = () => {
-    console.log("SHOW MODAL");
+    // console.log("SHOW MODAL");
     this.setState({ show: true });
     document.documentElement.style.overflow = "hidden";
     document.body.scroll = "no";
@@ -146,7 +138,7 @@ class App extends Component {
   // };
 
   hideModal = () => {
-    console.log("HIDE MODAL");
+    // console.log("HIDE MODAL");
     this.setState(
       { show: false, isVideoPaused: true }
       // () =>
@@ -173,20 +165,20 @@ class App extends Component {
   // };
 
   showOverlay = () => {
-    console.log("SHOW OVERLAY");
+    // console.log("SHOW OVERLAY");
     this.setState({ showmenu: true });
     document.documentElement.style.overflow = "hidden";
     document.body.scroll = "no";
   };
   hideOverlay = () => {
-    console.log("HIDE OVERLAY");
+    // console.log("HIDE OVERLAY");
     this.setState({ showmenu: false });
     // window.scrollTo(0,document.body.scrollTop);
     document.documentElement.style.overflow = "scroll";
     document.body.scroll = "yes";
   };
   moveToContact = () => {
-    console.log("HIDE OVERLAY");
+    // console.log("HIDE OVERLAY");
     this.setState({ showmenu: false });
     window.scrollTo(0, document.body.scrollHeight);
     document.documentElement.style.overflow = "scroll";
@@ -194,7 +186,7 @@ class App extends Component {
   };
 
   setCircleIn = circleState => {
-    console.log("circ:", circleState);
+    // console.log("circ:", circleState);
     this.setState({
       circleIn: circleState
     });
@@ -206,8 +198,12 @@ class App extends Component {
       const circNum = i + 1;
       const sectionNum = circNum + 1;
       const src =
-        visibleSection === circNum || circleIn === circNum ? `assets/images/${circNum}.png` : `assets/images/circle${circNum}.png`;
-
+       visibleSection === circNum || circleIn === circNum ? `assets/images/${circNum}.png` : `assets/images/circle${circNum}.png`;
+        console.log('SECTION NUM VALUE',  `${sectionNum}`)
+        console.log('SECTION HREF',  'https://localhost:8000/#' + `section${sectionNum}`)
+        console.log('CIRCNUM HREF',  'https://localhost:8000/#' + `section${circNum}` )
+        console.log('CIRCNUM VALUE',  circNum)
+        console.log('VALUE',  'https://localhost:8000/#' + `section${sectionNum}` === 'https://localhost:8000/#' + `section${circNum}`)
       return (
         <img
           className={`circle-${circNum}`}
@@ -258,14 +254,14 @@ class App extends Component {
               )}
               {console.log("window pageYOffset", +window.fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0) }*/}
 
-              { window.location.href === "http://localhost:8000/#section1" || window.location.href === "http://localhost:8000/" ? (
+              { window.location.href === "https://prod.wearered.com/#section1" || window.location.href === "https://prod.wearered.com/" ? (
                 <img className="top-icon--hidden" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
               ) : (
               <div>
                 <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
               
-              {console.log("window.location.href", window.location.href) }
+              {/*{console.log("window.location.href", window.location.href) }*/}
             </div>
           </div>
         </div>
@@ -276,7 +272,7 @@ class App extends Component {
             return (
               <ReactFullpage.Wrapper>
                 <div className="content-container">
-                  <div className="home" className="section" ref={this.section1ref} data-anchor="section1">
+                  <div className="home" className="section" ref={this.section1ref} data-anchor="section1"onMouseEnter={() => this.setCircleIn(null)} >
                     <CopyText
                       wait={1000}
                       headline="Ads with impact."
@@ -289,22 +285,22 @@ class App extends Component {
                       </div>
                      : 
                       <div>
-                        <Slideshow content={data} cycleSpeed={3000} />
+                        <Slideshow content={data} cycleSpeed={3000}  />
                       </div>
                     }
 
-                    {console.log("ISMOBILE", isMobile)}
+                  
                     <div
                       className={classnames("scroll-icon-container", {
                         "scroll-icon-container--hidden": !this.state.visible
                       })}
                     >
-                      {console.log("fullpageApi", fullpageApi)}
+                    
                       <img src="assets/images/scroll-the-facts.png" onClick={() => fullpage_api.moveSectionDown()} />
                     </div>
                   </div>
 
-                  <div className="section" ref={this.section2ref} data-anchor="section2">
+                  <div className="section" ref={this.section2ref} data-anchor="section2" onMouseEnter={() => this.setCircleIn(1)}  >
                     <CopyText
                       className="fade-in"
                       wait={1000}
@@ -315,7 +311,7 @@ class App extends Component {
                     <Slideshow content={data2} cycleSpeed={3000} />
                   </div>
 
-                  <div className="section" ref={this.section3ref} data-anchor="section3">
+                  <div className="section" ref={this.section3ref} data-anchor="section3" onMouseEnter={() => this.setCircleIn(2)}>
                     <CopyText
                       wait={1000}
                       headline="0.5 seconds is the average time spent on a social ad. We've got that beat."
@@ -325,7 +321,7 @@ class App extends Component {
                     <Slideshow content={data3} cycleSpeed={3000} />
                   </div>
 
-                  <div className="section" ref={this.section4ref} data-anchor="section4">
+                  <div className="section" ref={this.section4ref} data-anchor="section4" onMouseEnter={() => this.setCircleIn(3)}>
                     <div className="cta-with-text">
                       <CopyText
                         wait={1000}
@@ -339,7 +335,7 @@ class App extends Component {
                     </div>
                   </div>
 
-                  <div className="section" ref={this.section5ref} data-anchor="section5">
+                  <div className="section" ref={this.section5ref} data-anchor="section5" onMouseEnter={() => this.setCircleIn(4)}>
                     <CopyText
                       wait={1000}
                       headline="100% of our code is open-source, self-compiling, and compatible with all networks."
@@ -349,7 +345,7 @@ class App extends Component {
                     <Slideshow content={data5} cycleSpeed={3000} />
                   </div>
 
-                  <div className="section" ref={this.section6ref} data-anchor="section6">
+                  <div className="section" ref={this.section6ref} data-anchor="section6" onMouseEnter={() => this.setCircleIn(5)}>
                     <CopyText
                       wait={1000}
                       headline="6 partners consult with us about how to make their platforms work better."
@@ -362,7 +358,7 @@ class App extends Component {
                     </div>
                   </div>
 
-                  <div className="section" ref={this.section7ref} data-anchor="section7">
+                  <div className="section" ref={this.section7ref} data-anchor="section7" onMouseEnter={() => this.setCircleIn(6)}>
                     <CopyText
                       wait={1000}
                       headline="100% of our in-house team knows the platforms inside and out."
@@ -372,7 +368,7 @@ class App extends Component {
                     <Slideshow content={data7} cycleSpeed={3000} />
                   </div>
 
-                  <div className="section" ref={this.section8ref} data-anchor="section8">
+                  <div className="section" ref={this.section8ref} data-anchor="section8" onMouseEnter={() => this.setCircleIn(7)}>
                     <div className="work" className="cta-with-text">
                       <CopyText
                         wait={1000}
@@ -387,7 +383,7 @@ class App extends Component {
                     </div>
                   </div>
 
-                  <div className="contact" className="section" ref={this.section9ref} data-anchor="section9">
+                  <div className="contact" className="section" ref={this.section9ref} data-anchor="section9" onMouseEnter={() => this.setCircleIn(null)}>
                     <CopyText
                       wait={1000}
                       headline="Give us a test."
