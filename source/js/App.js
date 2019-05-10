@@ -92,19 +92,19 @@ class App extends Component {
   };
 
   clickHamburger = () => {
-    console.log("HAMBURGER CLICKED!");
+    // console.log("HAMBURGER CLICKED!");
     this.setState({
       isOpened: !this.state.isOpened
     });
     //shows X
   };
   closeOverlay = () => {
-    console.log("Overlay closed!");
+    // console.log("Overlay closed!");
     this.setState({ isOpened: !this.state.isOpened });
   };
 
   clickToSection = currentRef => {
-    console.log("CLICKED TO SECTION!");
+    // console.log("CLICKED TO SECTION!");
     this.setState({ showmenu: false });
     if (currentRef) {
       currentRef.scrollIntoView({
@@ -257,7 +257,7 @@ class App extends Component {
                 <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
               
-              {console.log("window.location.href", window.location.href) }
+              {/*{console.log("window.location.href", window.location.href) }*/}
             </div>
           </div>
         </div>
