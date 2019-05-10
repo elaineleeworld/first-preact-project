@@ -249,14 +249,16 @@ class App extends Component {
                 <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
               {console.log("window pageYOffset", +fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0) }*/}
-
+{/*
              { window.location.href === "https://prod.wearered.com/#section1" || window.location.href === 'http://localhost:8000/#section1' ||  window.location.href === 'http://localhost:8000/' ||  window.location.href === "https://prod.wearered.com/" ? (
                 <img className="top-icon--hidden" src="assets/images/backtotop.png"/>
               ) : (
               <div>
                 <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
-              
+              */}
+              <div>
+                <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               {/*{console.log("window.location.href", window.location.href) }*/}
             </div>
           </div>
