@@ -199,11 +199,7 @@ class App extends Component {
       const sectionNum = circNum + 1;
       const src =
        visibleSection === circNum || circleIn === circNum ? `assets/images/${circNum}.png` : `assets/images/circle${circNum}.png`;
-        console.log('SECTION NUM VALUE',  `${sectionNum}`)
-        console.log('SECTION HREF',  'https://localhost:8000/#' + `section${sectionNum}`)
-        console.log('CIRCNUM HREF',  'https://localhost:8000/#' + `section${circNum}` )
-        console.log('CIRCNUM VALUE',  circNum)
-        console.log('VALUE',  'https://localhost:8000/#' + `section${sectionNum}` === 'https://localhost:8000/#' + `section${circNum}`)
+      
       return (
         <img
           className={`circle-${circNum}`}
@@ -246,22 +242,22 @@ class App extends Component {
               onClick={() => this.clickToSection(this.section1ref.current)}
               style={{ display: !this.state.showmenu ? "block" : "none" }}
             >
-             {/* { +window.fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0  ? (
+             {/* { +fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0  ? (
                 <img className="top-icon--hidden" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
               ) : (
               <div>
                 <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
-              {console.log("window pageYOffset", +window.fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0) }*/}
+              {console.log("window pageYOffset", +fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0) }*/}
 
-              { window.location.href === "https://prod.wearered.com/#section1" || window.location.href === "https://prod.wearered.com/" ? (
-                <img className="top-icon--hidden" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
+             { window.location.href === "https://prod.wearered.com/#section1" || window.location.href === 'http://localhost:8000/#section1' ||  window.location.href === 'http://localhost:8000/' ||  window.location.href === "https://prod.wearered.com/" ? (
+                <img className="top-icon--hidden" src="assets/images/backtotop.png"/>
               ) : (
               <div>
                 <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
               
-              {/*{console.log("window.location.href", window.location.href) }*/}
+              {console.log("window.location.href", window.location.href) }
             </div>
           </div>
         </div>
