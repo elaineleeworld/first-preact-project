@@ -180,7 +180,9 @@ class App extends Component {
   moveToContact = () => {
     // console.log("HIDE OVERLAY");
     this.setState({ showmenu: false });
-    window.scrollTo(0, document.body.scrollHeight);
+    // window.scrollTo(0, document.body.scrollHeight);
+    fullpage_api.moveTo("section9")
+    console.log('movetocontact',fullpage_api.moveTo("section9"))
     document.documentElement.style.overflow = "scroll";
     document.body.scroll = "yes";
   };
@@ -265,7 +267,7 @@ class App extends Component {
         </div>
         <ReactFullpage
           anchors={["section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9"]}
-          scrollOverflow={true}
+         
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
