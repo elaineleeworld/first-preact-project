@@ -53,7 +53,6 @@ class App extends Component {
     this.section7ref = createRef();
     this.section8ref = createRef();
     this.section9ref = createRef();
-    
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
@@ -117,7 +116,7 @@ class App extends Component {
   showModal = () => {
     // console.log("SHOW MODAL");
     this.setState({ show: true });
-    document.documentElement.style.overflow = "hidden";
+    // document.documentElement.style.overflow = "hidden";
     document.body.scroll = "no";
   };
 
@@ -181,8 +180,8 @@ class App extends Component {
     // console.log("HIDE OVERLAY");
     this.setState({ showmenu: false });
     // window.scrollTo(0, document.body.scrollHeight);
-    fullpage_api.moveTo("section9")
-    console.log('movetocontact',fullpage_api.moveTo("section9"))
+    fullpage_api.moveTo("section9");
+    console.log("movetocontact", fullpage_api.moveTo("section9"));
     document.documentElement.style.overflow = "scroll";
     document.body.scroll = "yes";
   };
@@ -200,8 +199,8 @@ class App extends Component {
       const circNum = i + 1;
       const sectionNum = circNum + 1;
       const src =
-       visibleSection === circNum || circleIn === circNum ? `assets/images/${circNum}.png` : `assets/images/circle${circNum}.png`;
-      
+        visibleSection === circNum || circleIn === circNum ? `assets/images/${circNum}.png` : `assets/images/circle${circNum}.png`;
+
       return (
         <img
           className={`circle-${circNum}`}
@@ -223,6 +222,7 @@ class App extends Component {
 
     return (
       <div id="app">
+        <Modal ref={this.ref} show={this.state.show} url="https://vimeo.com/313026654" handleClose={this.hideModal} />
         <HamburgerOverlay
           show={this.state.showmenu}
           handleClose={this.hideOverlay}
@@ -244,14 +244,14 @@ class App extends Component {
               onClick={() => this.clickToSection(this.section1ref.current)}
               style={{ display: !this.state.showmenu ? "block" : "none" }}
             >
-             {/* { +fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0  ? (
+              {/* { +fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0  ? (
                 <img className="top-icon--hidden" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
               ) : (
               <div>
                 <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
               )}
               {console.log("window pageYOffset", +fullpage_api.test.translate3d.split(' ')[1].split('px')[0] === 0) }*/}
-{/*
+              {/*
              { window.location.href === "https://prod.wearered.com/#section1" || window.location.href === 'http://localhost:8000/#section1' ||  window.location.href === 'http://localhost:8000/' ||  window.location.href === "https://prod.wearered.com/" ? (
                 <img className="top-icon--hidden" src="assets/images/backtotop.png"/>
               ) : (
@@ -260,47 +260,51 @@ class App extends Component {
               )}
               */}
               <div>
-                <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)}   /></div>
+                <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
+              </div>
               {/*{console.log("window.location.href", window.location.href) }*/}
             </div>
           </div>
         </div>
         <ReactFullpage
           anchors={["section1", "section2", "section3", "section4", "section5", "section6", "section7", "section8", "section9"]}
-         
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
                 <div className="content-container">
-                  <div className="home" className="section" ref={this.section1ref} data-anchor="section1"onMouseEnter={() => this.setCircleIn(null)} >
+                  <div
+                    className="home"
+                    className="section"
+                    ref={this.section1ref}
+                    data-anchor="section1"
+                    onMouseEnter={() => this.setCircleIn(null)}
+                  >
                     <CopyText
                       wait={1000}
                       headline="Ads with impact."
                       subheadline="For most agencies, display and social ads are an afterthought. For us, they're our story.  We know how to make people stop scrolling - and start interacting."
                     />
 
-                    {isMobile ? 
+                    {isMobile ? (
                       <div>
-                      <Slideshow content={dataMobile} cycleSpeed={3000} />
+                        <Slideshow content={dataMobile} cycleSpeed={3000} />
                       </div>
-                     : 
+                    ) : (
                       <div>
-                        <Slideshow content={data} cycleSpeed={3000}  />
+                        <Slideshow content={data} cycleSpeed={3000} />
                       </div>
-                    }
+                    )}
 
-                  
                     <div
                       className={classnames("scroll-icon-container", {
                         "scroll-icon-container--hidden": !this.state.visible
                       })}
                     >
-                    
                       <img src="assets/images/scroll-the-facts.png" onClick={() => fullpage_api.moveSectionDown()} />
                     </div>
                   </div>
 
-                  <div className="section" ref={this.section2ref} data-anchor="section2" onMouseEnter={() => this.setCircleIn(1)}  >
+                  <div className="section" ref={this.section2ref} data-anchor="section2" onMouseEnter={() => this.setCircleIn(1)}>
                     <CopyText
                       className="fade-in"
                       wait={1000}
@@ -331,7 +335,6 @@ class App extends Component {
 
                       <Slideshow content={data4} cycleSpeed={3000} />
                       <CTA wait={1000} word="DISCOVER VELVET" onClick={this.showModal} />
-                      <Modal ref={this.ref} show={this.state.show} url="https://vimeo.com/313026654" handleClose={this.hideModal} />
                     </div>
                   </div>
 
@@ -383,7 +386,13 @@ class App extends Component {
                     </div>
                   </div>
 
-                  <div className="contact" className="section" ref={this.section9ref} data-anchor="section9" onMouseEnter={() => this.setCircleIn(null)}>
+                  <div
+                    className="contact"
+                    className="section"
+                    ref={this.section9ref}
+                    data-anchor="section9"
+                    onMouseEnter={() => this.setCircleIn(null)}
+                  >
                     <CopyText
                       wait={1000}
                       headline="Give us a test."
