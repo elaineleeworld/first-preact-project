@@ -261,7 +261,7 @@ class App extends Component {
               )}
               */}
               <div>
-                <img className="top-icon" src="assets/images/backtotop.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
+                <img className="top-icon" src="assets/images/top-icon.png" onClick={() => fullpage_api.moveTo("section1", 1)} />
               </div>
               {/*{console.log("window.location.href", window.location.href) }*/}
             </div>
@@ -301,7 +301,7 @@ class App extends Component {
                         "scroll-icon-container--hidden": !this.state.visible
                       })}
                     >
-                      <img src="assets/images/scroll-the-facts.png" onClick={() => fullpage_api.moveSectionDown()} />
+                      <img src="assets/images/mouse.png" onClick={() => fullpage_api.moveSectionDown()} />
                     </div>
                   </div>
 
