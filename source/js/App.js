@@ -116,7 +116,7 @@ class App extends Component {
   showModal = () => {
     // console.log("SHOW MODAL");
     this.setState({ show: true });
-    // document.documentElement.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     document.body.scroll = "no";
   };
 
@@ -165,6 +165,7 @@ class App extends Component {
 
   showOverlay = () => {
     // console.log("SHOW OVERLAY");
+
     this.setState({ showmenu: true });
     document.documentElement.style.overflow = "hidden";
     document.body.scroll = "no";
