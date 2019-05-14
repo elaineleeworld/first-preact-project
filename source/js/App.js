@@ -182,7 +182,7 @@ class App extends Component {
     this.setState({ showmenu: false });
     // window.scrollTo(0, document.body.scrollHeight);
     fullpage_api.moveTo("section9");
-    console.log("movetocontact", fullpage_api.moveTo("section9"));
+    // console.log("movetocontact", fullpage_api.moveTo("section9"));
     document.documentElement.style.overflow = "scroll";
     document.body.scroll = "yes";
   };
