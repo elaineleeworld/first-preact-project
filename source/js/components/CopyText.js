@@ -39,6 +39,8 @@ class CopyText extends Component {
 				 <h1>{this.props.headline}</h1>
 				
 				<p>{this.props.subheadline}</p>
+				<img className='copy-text-image' src={this.props.imagesrc}></img>
+				<div className='cta-text' onClick={this.props.onClick} style={this.props.ctaStyles}>{this.props.cta}</div>
 				 </div>
 			</div>
 		)
