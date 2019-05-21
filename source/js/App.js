@@ -332,13 +332,13 @@ class App extends Component {
                         wait={1000}
                         headline="13x. That's how much faster we work."
                         subheadline="We've developed in-house ad tech that creates dynamic campaigns, at scale, and much faster than conventional production methods. Including a product called Velvet - our favorite toy."
-                        cta='DISCOVER VELVET'
-                        ctaStyles={{backgroundColor: '#232b3c'}}
+                        cta="DISCOVER VELVET"
+                        ctaStyles={{ backgroundColor: "#232b3c" }}
                         onClick={this.showModal}
                       />
 
                       <Slideshow content={data4} cycleSpeed={3000} />
-                    {/*  <CTA wait={1000} word="DISCOVER VELVET" onClick={this.showModal} /> */}
+                      {/*  <CTA wait={1000} word="DISCOVER VELVET" onClick={this.showModal} /> */}
                     </div>
                   </div>
 
@@ -357,11 +357,11 @@ class App extends Component {
                       wait={1000}
                       headline="6 partners consult with us about how to make their platforms work better."
                       subheadline="And we couldn't be prouder to work with them."
-                      imagesrc='assets/images/partner_logos.png'
+                      imagesrc="assets/images/partner_logos.png"
                     />
 
                     <Slideshow content={data6} cycleSpeed={3000} />
-                  { /* <div className="partner-logos">
+                    {/* <div className="partner-logos">
                       <img src="assets/images/partner_logos.png" />
                     </div> */}
                   </div>
@@ -382,13 +382,13 @@ class App extends Component {
                         wait={1000}
                         headline="Tons of happy clients use our skills every day."
                         subheadline="They're too many to count. But they include some big names in sports, streaming entertainment, and beverage - and one kinda famous mouse."
-                        cta='LATEST WORK'
-                        ctaStyles={{backgroundColor: '#232b3c'}}
-                        onClick={() => window.open("http://sizzle.wearered.com", "_blank")}
                       />
+                      {/* cta='LATEST WORK'*/}
+                      {/* ctaStyles={{backgroundColor: '#232b3c'}}*/}
+                      {/* onClick={() => window.open("http://sizzle.wearered.com", "_blank")} */}
 
                       <Slideshow content={data8} cycleSpeed={3000} />
-                     {/* <CTA wait={1000} word="LATEST WORK" onClick={() => window.open("http://sizzle.wearered.com", "_blank")} />*/}
+                      {/* <CTA wait={1000} word="LATEST WORK" onClick={() => window.open("http://sizzle.wearered.com", "_blank")} />*/}
                       {/*<CTA  wait={1000} word='LATEST WORK' onClick={this.showModal2} />
 				<Modal show={this.state.show2} url='https://www.youtube.com/watch?v=sNJUzwBNbxo' handleClose={this.hideModal2} /> */}
                     </div>
